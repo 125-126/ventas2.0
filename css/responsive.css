@@ -1,35 +1,47 @@
 /* =====================================================
    ZAVITA
    RESPONSIVE.CSS
-   SISTEMA RESPONSIVE PROFESIONAL v3
+   PREMIUM RESPONSIVE SYSTEM v4
 ===================================================== */
 
 
 /* =====================================================
    DESKTOP GRANDE
-   1400px +
 ===================================================== */
+
 
 @media(min-width:1400px){
 
 .container{
-    width:1250px;
+width:min(1280px,90%);
 }
+
 
 .hero-grid{
-    gap:70px;
+
+gap:80px;
+
 }
+
 
 .hero-left h1{
-    font-size:5.5rem;
+
+font-size:5.3rem;
+
 }
+
 
 .hero-image{
-    transform:scale(1.08);
+
+transform:scale(1.08);
+
 }
 
+
 .products-grid{
-    gap:45px;
+
+gap:45px;
+
 }
 
 }
@@ -40,49 +52,69 @@
 
 /* =====================================================
    LAPTOP
-   HASTA 1200px
 ===================================================== */
+
 
 @media(max-width:1200px){
 
+
 .hero-grid{
-    gap:40px;
+
+gap:35px;
+
 }
+
 
 
 .hero-left h1{
-    font-size:4rem;
+
+font-size:4rem;
+
 }
+
 
 
 .products-grid{
-    grid-template-columns:repeat(2,1fr);
+
+grid-template-columns:repeat(2,1fr);
+
 }
+
 
 
 .why-grid{
-    grid-template-columns:repeat(2,1fr);
+
+grid-template-columns:repeat(2,1fr);
+
 }
+
 
 
 .stats-grid{
-    grid-template-columns:repeat(2,1fr);
+
+grid-template-columns:repeat(2,1fr);
+
 }
+
 
 
 .footer-grid{
-    grid-template-columns:repeat(2,1fr);
+
+grid-template-columns:repeat(2,1fr);
+
 }
+
 
 
 .about-grid{
-    gap:40px;
+
+gap:40px;
+
 }
 
 
+
 }
-
-
 
 
 
@@ -90,20 +122,33 @@
 
 /* =====================================================
    TABLET
-   HASTA 991px
 ===================================================== */
+
 
 @media(max-width:991px){
 
 
 
+.container{
+
+width:92%;
+
+}
+
+
+
+
 /* HEADER */
+
 
 .navbar{
 
-height:85px;
+height:80px;
+
+padding:0 22px;
 
 }
+
 
 
 
@@ -115,19 +160,19 @@ align-items:center;
 
 justify-content:center;
 
-width:45px;
+width:46px;
 
-height:45px;
-
-border:none;
+height:46px;
 
 border-radius:50%;
+
+border:none;
 
 background:var(--green);
 
 color:white;
 
-font-size:1.5rem;
+font-size:1.3rem;
 
 cursor:pointer;
 
@@ -137,30 +182,32 @@ cursor:pointer;
 
 
 
-/* MENU MOBILE */
+/* MENU */
 
 
 nav{
 
+
 position:fixed;
 
-top:85px;
+top:80px;
 
 left:-100%;
 
 width:100%;
 
-height:calc(100vh - 85px);
+height:calc(100vh - 80px);
 
 background:white;
 
 padding:50px 30px;
 
-transition:.4s ease;
-
 box-shadow:var(--shadow);
 
-z-index:9998;
+transition:.45s var(--ease-zavita);
+
+z-index:999;
+
 
 }
 
@@ -176,13 +223,15 @@ left:0;
 
 nav ul{
 
+
 display:flex;
 
 flex-direction:column;
 
 align-items:center;
 
-gap:30px;
+gap:35px;
+
 
 }
 
@@ -190,9 +239,10 @@ gap:30px;
 
 nav a{
 
-font-size:1.2rem;
+font-size:1.15rem;
 
 }
+
 
 
 
@@ -202,13 +252,16 @@ font-size:1.2rem;
 
 .hero{
 
-padding-top:130px;
+min-height:auto;
+
+padding:140px 0 80px;
 
 }
 
 
 
 .hero-grid{
+
 
 grid-template-columns:1fr;
 
@@ -238,7 +291,7 @@ justify-content:center;
 
 .hero-right{
 
-margin-top:40px;
+margin-top:50px;
 
 }
 
@@ -246,9 +299,11 @@ margin-top:40px;
 
 .hero-image img{
 
+
 max-width:420px;
 
 margin:auto;
+
 
 }
 
@@ -269,7 +324,7 @@ grid-template-columns:1fr;
 
 .about-image{
 
-max-width:600px;
+max-width:650px;
 
 margin:auto;
 
@@ -291,18 +346,11 @@ grid-template-columns:1fr;
 
 }
 
-
-
-
-
-
-
-
-
 /* =====================================================
    MOBILE GRANDE
    HASTA 767px
 ===================================================== */
+
 
 @media(max-width:767px){
 
@@ -315,9 +363,30 @@ width:92%;
 
 
 
+/* HERO */
+
+
+.hero{
+
+padding:120px 0 70px;
+
+}
+
+
+
 .hero-left h1{
 
-font-size:3rem;
+font-size:2.8rem;
+
+line-height:1.1;
+
+}
+
+
+
+.hero-left p{
+
+font-size:.95rem;
 
 }
 
@@ -340,15 +409,18 @@ width:100%;
 
 justify-content:center;
 
+padding:15px 25px;
+
 }
 
 
 
 .hero-stats{
 
-justify-content:center;
 
 gap:25px;
+
+justify-content:center;
 
 flex-wrap:wrap;
 
@@ -356,19 +428,49 @@ flex-wrap:wrap;
 
 
 
-.products-grid,
-.why-grid,
-.stats-grid{
+.hero-stats strong{
 
-grid-template-columns:1fr;
+font-size:1.6rem;
 
 }
 
 
 
-.product-image{
 
-height:220px;
+
+/* IMAGEN HERO */
+
+
+.hero-image img{
+
+max-width:330px;
+
+}
+
+
+
+
+/* SECCIONES */
+
+
+.about,
+.products,
+.why,
+.cta,
+.contact{
+
+
+padding:80px 0;
+
+}
+
+
+
+
+
+.section-header{
+
+margin-bottom:40px;
 
 }
 
@@ -376,18 +478,63 @@ height:220px;
 
 .section-header h2{
 
-font-size:2rem;
+font-size:2.1rem;
 
 }
 
 
 
-.cta h2{
 
-font-size:2.3rem;
+
+/* PRODUCTOS */
+
+
+.products-grid,
+.why-grid,
+.stats-grid{
+
+
+grid-template-columns:1fr;
+
 
 }
 
+
+
+.product-image{
+
+height:230px;
+
+}
+
+
+
+
+
+.product-content{
+
+padding:28px;
+
+}
+
+
+
+
+
+/* ABOUT */
+
+
+.about-box{
+
+
+padding:25px;
+
+}
+
+
+
+
+/* CONTACTO */
 
 
 .contact-form{
@@ -398,17 +545,33 @@ padding:25px;
 
 
 
+.contact-info h2{
+
+font-size:2.3rem;
+
+}
+
+
+
+
+
+/* FOOTER */
+
+
 .footer-grid{
+
 
 grid-template-columns:1fr;
 
 text-align:center;
+
 
 }
 
 
 
 .social{
+
 
 justify-content:center;
 
@@ -421,24 +584,21 @@ justify-content:center;
 
 
 
-
-
-
-
-
 /* =====================================================
    MOBILE PEQUEÑO
    HASTA 575px
 ===================================================== */
 
+
 @media(max-width:575px){
+
 
 
 .navbar{
 
-height:75px;
+height:72px;
 
-padding:0 20px;
+padding:0 18px;
 
 }
 
@@ -446,27 +606,34 @@ padding:0 20px;
 
 .logo img{
 
-width:55px;
+width:54px;
 
-height:55px;
+height:54px;
 
 }
+
+
 
 
 
 nav{
 
-top:75px;
 
-height:calc(100vh - 75px);
+top:72px;
+
+height:calc(100vh - 72px);
+
 
 }
 
 
 
+
+
 .hero{
 
-padding-top:110px;
+
+padding-top:105px;
 
 }
 
@@ -474,7 +641,9 @@ padding-top:110px;
 
 .hero-left h1{
 
-font-size:2.5rem;
+
+font-size:2.35rem;
+
 
 }
 
@@ -482,9 +651,10 @@ font-size:2.5rem;
 
 .badge{
 
-font-size:.8rem;
 
-padding:8px 15px;
+font-size:.78rem;
+
+padding:8px 14px;
 
 }
 
@@ -492,27 +662,28 @@ padding:8px 15px;
 
 .hero-image img{
 
-max-width:280px;
+
+max-width:260px;
+
 
 }
 
 
 
-.about{
 
-padding:80px 0;
 
-}
-
+/* ABOUT BOX */
 
 
 .about-box{
 
+
 flex-direction:column;
+
+align-items:center;
 
 text-align:center;
 
-align-items:center;
 
 }
 
@@ -520,29 +691,23 @@ align-items:center;
 
 .about-box .icon{
 
+
 margin:auto;
 
-}
-
-
-
-.experience-card{
-
-position:relative;
-
-left:auto;
-
-bottom:auto;
-
-margin:25px auto 0;
 
 }
 
 
 
-.product-content{
 
-padding:25px;
+/* PRODUCTOS */
+
+
+.product-image{
+
+
+height:200px;
+
 
 }
 
@@ -550,52 +715,86 @@ padding:25px;
 
 .product-content h3{
 
-font-size:1.3rem;
+
+font-size:1.25rem;
+
 
 }
 
 
 
-.contact-info h2{
+
+/* CTA */
+
+
+.cta h2{
+
 
 font-size:2rem;
 
+
 }
 
+
+
+
+
+/* FORMULARIO */
+
+
+.contact-form input,
+.contact-form textarea{
+
+
+padding:15px;
+
+
+}
+
+
+
+
+
+/* WHATSAPP */
 
 
 .whatsapp{
 
-width:58px;
 
-height:58px;
+width:56px;
+
+height:56px;
 
 right:15px;
 
-bottom:20px;
+bottom:18px;
+
+font-size:1.5rem;
+
 
 }
+
+
 
 
 
 #scrollTop{
 
+
 right:15px;
 
-bottom:90px;
+bottom:85px;
 
 width:45px;
 
 height:45px;
 
-}
-
-
 
 }
 
 
 
+}
 
 
 
@@ -606,29 +805,14 @@ height:45px;
    HASTA 360px
 ===================================================== */
 
+
 @media(max-width:360px){
 
 
-.hero-left h1{
 
-font-size:2.2rem;
+.container{
 
-}
-
-
-
-.section-header h2{
-
-font-size:1.7rem;
-
-}
-
-
-
-.btn-primary,
-.btn-secondary{
-
-padding:13px 20px;
+width:94%;
 
 }
 
@@ -644,12 +828,158 @@ height:50px;
 
 
 
-.contact-form{
 
-padding:20px;
+
+.hero-left h1{
+
+
+font-size:2rem;
+
+
+}
+
+
+
+
+.hero-buttons a{
+
+
+font-size:.9rem;
+
+
+}
+
+
+
+
+.hero-stats{
+
+
+flex-direction:column;
+
+align-items:center;
+
+
+}
+
+
+
+
+.section-header h2{
+
+
+font-size:1.7rem;
+
+
+}
+
+
+
+
+.product-content{
+
+
+padding:22px;
+
+
+}
+
+
+
+
+.contact-info h2{
+
+
+font-size:1.8rem;
+
+
+}
+
+
+
+
+.btn-primary,
+.btn-secondary{
+
+
+padding:13px 18px;
+
 
 }
 
 
 
 }
+
+
+
+
+/* =====================================================
+   PANTALLAS ALTAS MOVILES
+===================================================== */
+
+
+@media(max-width:767px) and (min-height:850px){
+
+
+
+.hero{
+
+
+min-height:85vh;
+
+display:flex;
+
+align-items:center;
+
+
+}
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+   OPTIMIZACION MOVIL
+===================================================== */
+
+
+@media(max-width:767px){
+
+
+
+.hero-image,
+.product-card,
+.why-card{
+
+
+will-change:auto;
+
+
+}
+
+
+
+.hero-image img{
+
+
+animation-duration:7s;
+
+
+}
+
+
+
+
+}
+
+
+
+
+/* =====================================================
+   FIN RESPONSIVE PREMIUM v4
+===================================================== */
