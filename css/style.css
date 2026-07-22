@@ -41,15 +41,153 @@ button,input,textarea{font-family:inherit;}
 
 
 /* ==========================
- LOADER
+ PRELOADER PREMIUM ZAVITA
 ========================== */
 
-.loader{position:fixed; inset:0; background:var(--green-dark); z-index:9999; display:flex; align-items:center; justify-content:center;}
 
-.loader img{width:120px; animation:pulse 1.5s infinite;}
+.loader{
 
-.loader-circle{position:absolute; width:180px; height:180px; border-radius:50%; border:3px solid var(--gold); animation:rotate 2s linear infinite;}
+position:fixed;
 
+inset:0;
+
+background:var(--green-dark);
+
+z-index:9999;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+overflow:hidden;
+
+transition:1s ease;
+
+}
+
+
+
+.loader img{
+
+width:120px;
+
+height:120px;
+
+object-fit:contain;
+
+animation:logoGrow 3.5s ease-in-out forwards;
+
+filter:drop-shadow(0 20px 35px rgba(0,0,0,.35));
+
+}
+
+
+
+.loader-circle{
+
+position:absolute;
+
+width:190px;
+
+height:190px;
+
+border-radius:50%;
+
+border:3px solid var(--gold);
+
+animation:circleRotate 3s linear infinite;
+
+}
+
+
+
+
+
+/* CRECIMIENTO DEL LOGO */
+
+
+@keyframes logoGrow{
+
+
+0%{
+
+transform:scale(.5);
+
+opacity:0;
+
+}
+
+
+30%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+
+70%{
+
+transform:scale(1.15);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:scale(1.35);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+@keyframes circleRotate{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+
+}
+
+
+
+
+
+/* CUANDO TERMINA */
+
+
+.loader.hide{
+
+opacity:0;
+
+visibility:hidden;
+
+transform:scale(1.2);
+
+}
 
 /* ==========================
  HEADER PREMIUM ZAVITA
