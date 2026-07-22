@@ -116,31 +116,23 @@ HEADER PREMIUM ZAVITA
 ========================= -->
 
 
-
 <header id="header">
 
 
 <div class="container">
 
 
-
 <div class="navbar">
-
-
-
 
 
 
 <!-- LOGO -->
 
-
 <a href="#inicio" class="logo">
-
 
 <img 
 src="img/logo.jpeg"
 alt="ZAVITA Distribución de Huevos">
-
 
 </a>
 
@@ -148,16 +140,12 @@ alt="ZAVITA Distribución de Huevos">
 
 
 
+<!-- NAVEGACIÓN -->
 
-
-<!-- NAVEGACIÓN DESKTOP -->
-
-
-<nav>
+<nav id="nav">
 
 
 <ul>
-
 
 
 <li>
@@ -167,8 +155,6 @@ Inicio
 </a>
 
 </li>
-
-
 
 
 
@@ -182,8 +168,6 @@ Nosotros
 
 
 
-
-
 <li>
 
 <a href="#productos">
@@ -191,8 +175,6 @@ Productos
 </a>
 
 </li>
-
-
 
 
 
@@ -206,8 +188,6 @@ Contacto
 
 
 
-
-
 </ul>
 
 
@@ -218,13 +198,12 @@ Contacto
 
 
 
-
-
-<!-- MENU MOBILE -->
+<!-- BOTÓN MENU MOBILE -->
 
 
 <button 
 class="menu"
+id="menu"
 aria-label="Abrir menú">
 
 
@@ -232,7 +211,6 @@ aria-label="Abrir menú">
 
 
 </button>
-
 
 
 
@@ -1234,6 +1212,21 @@ JS
 ===========================================-->
 
 <script src="js/app.js"></script>
+<script>
 
+const menu=document.getElementById("menu");
+
+const nav=document.getElementById("nav");
+
+menu.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+menu.classList.toggle("open");
+
+});
+
+
+</script>
 </body>
 </html>
