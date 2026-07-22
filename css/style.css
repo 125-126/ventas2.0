@@ -333,17 +333,16 @@ HERO
     position: absolute;
     inset: 0;
 
-    background-image: href="img/logo.png">
+    background-image: url("../img/hero1.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 
-    opacity: 0.08; /* Cambia entre 0.05 y 0.15 si la quieres más visible */
+    opacity: 0.08;
 
     pointer-events: none;
     z-index: 0;
 }
-
 /* Todo el contenido del Hero queda encima */
 .hero > *{
     position: relative;
