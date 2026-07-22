@@ -1,160 +1,150 @@
 /* =====================================================
    ZAVITA
    ANIMATIONS.CSS
-   SISTEMA PREMIUM MOTION v2
+   PREMIUM MOTION SYSTEM v3
 ===================================================== */
 
 
-/* ==========================
-   VARIABLES ANIMACIÓN
-========================== */
-
 :root{
-
---ease-premium:cubic-bezier(.22,1,.36,1);
-
+--ease-zavita:cubic-bezier(.22,1,.36,1);
 }
 
 
-
-/* ==========================
-   FADE UP PREMIUM
-========================== */
+/* =====================================================
+   ENTRADAS GENERALES
+===================================================== */
 
 
 .fade-up{
-
-animation:zavitaFadeUp .9s var(--ease-premium) forwards;
-
+animation:zFadeUp .9s var(--ease-zavita) forwards;
 }
 
 
-
-@keyframes zavitaFadeUp{
+@keyframes zFadeUp{
 
 from{
-
 opacity:0;
-
-transform:translateY(60px);
-
+transform:translateY(45px);
 }
-
 
 to{
-
 opacity:1;
-
 transform:translateY(0);
-
 }
 
 }
 
 
-
-/* ==========================
-   FADE LEFT
-========================== */
 
 
 .fade-left{
 
-animation:zavitaFadeLeft 1s var(--ease-premium) forwards;
+animation:zFadeLeft .9s var(--ease-zavita) forwards;
 
 }
 
 
-
-@keyframes zavitaFadeLeft{
+@keyframes zFadeLeft{
 
 from{
-
 opacity:0;
-
-transform:translateX(-70px);
-
+transform:translateX(-50px);
 }
-
 
 to{
-
 opacity:1;
-
 transform:translateX(0);
-
 }
 
 }
 
 
-
-/* ==========================
-   FADE RIGHT
-========================== */
 
 
 .fade-right{
 
-animation:zavitaFadeRight 1s var(--ease-premium) forwards;
+animation:zFadeRight .9s var(--ease-zavita) forwards;
 
 }
 
 
-
-@keyframes zavitaFadeRight{
+@keyframes zFadeRight{
 
 from{
-
 opacity:0;
-
-transform:translateX(70px);
-
+transform:translateX(50px);
 }
-
 
 to{
-
 opacity:1;
-
 transform:translateX(0);
-
 }
 
 }
 
 
 
-
-
-/* ==========================
-   ZOOM PREMIUM
-========================== */
 
 
 .zoom-in{
 
-animation:zavitaZoom .8s var(--ease-premium) forwards;
+animation:zZoom .8s var(--ease-zavita) forwards;
 
 }
 
 
-
-@keyframes zavitaZoom{
+@keyframes zZoom{
 
 from{
-
 opacity:0;
-
-transform:scale(.85);
-
+transform:scale(.92);
 }
 
 
 to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+
+
+/* =====================================================
+   LOGO LOADER
+===================================================== */
+
+
+.loader img{
+
+animation:zLogoIntro 2s var(--ease-zavita);
+
+}
+
+
+
+@keyframes zLogoIntro{
+
+
+0%{
+
+opacity:0;
+transform:scale(.5) rotate(-20deg);
+
+}
+
+
+50%{
 
 opacity:1;
+transform:scale(1.1) rotate(0);
 
+}
+
+
+100%{
+
+opacity:1;
 transform:scale(1);
 
 }
@@ -165,22 +155,20 @@ transform:scale(1);
 
 
 
-/* ==========================
-   FLOAT PREMIUM
-========================== */
+/* =====================================================
+   HERO IMAGE PREMIUM
+===================================================== */
 
 
-.zavita-float{
+.hero-image img{
 
-animation:zavitaFloating 5s ease-in-out infinite;
-
-will-change:transform;
+animation:zHeroFloat 5s ease-in-out infinite;
 
 }
 
 
 
-@keyframes zavitaFloating{
+@keyframes zHeroFloat{
 
 
 0%{
@@ -192,7 +180,7 @@ transform:translateY(0);
 
 50%{
 
-transform:translateY(-18px);
+transform:translateY(-12px);
 
 }
 
@@ -210,11 +198,65 @@ transform:translateY(0);
 
 
 
-/* HERO PRODUCTO */
+/* =====================================================
+   BOTONES
+===================================================== */
 
-.hero-image img{
 
-animation:zavitaFloating 6s ease-in-out infinite;
+.btn-primary,
+.btn-secondary{
+
+position:relative;
+overflow:hidden;
+
+}
+
+
+
+.btn-primary::before,
+.btn-secondary::before{
+
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120%;
+
+width:60%;
+
+height:100%;
+
+
+background:linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+
+transform:skewX(-25deg);
+
+
+transition:.6s;
+
+
+}
+
+
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before{
+
+left:130%;
 
 }
 
@@ -222,53 +264,139 @@ animation:zavitaFloating 6s ease-in-out infinite;
 
 
 
-/* ==========================
-   GOLD LIGHT EFFECT
-========================== */
 
 
-.gold-glow{
-
-animation:zavitaGlow 3s ease-in-out infinite alternate;
-
-}
-
-
-
-@keyframes zavitaGlow{
-
-
-from{
-
-box-shadow:0 0 20px rgba(212,166,58,.15);
-
-}
-
-
-
-to{
-
-box-shadow:0 0 55px rgba(212,166,58,.55);
-
-}
-
-
-}
-
-
-
-
-
-/* ==========================
-   CARD PREMIUM HOVER
-========================== */
+/* =====================================================
+   CARDS ENTRADA ESCALONADA
+===================================================== */
 
 
 .product-card,
 .why-card,
-.stat{
+.about-box{
 
-transform-style:preserve-3d;
+
+opacity:0;
+
+transform:translateY(40px);
+
+animation:zCard .8s var(--ease-zavita) forwards;
+
+}
+
+
+
+.product-card:nth-child(1),
+.why-card:nth-child(1),
+.about-box:nth-child(1){
+
+animation-delay:.15s;
+
+}
+
+
+
+.product-card:nth-child(2),
+.why-card:nth-child(2),
+.about-box:nth-child(2){
+
+animation-delay:.3s;
+
+}
+
+
+
+.product-card:nth-child(3),
+.why-card:nth-child(3),
+.about-box:nth-child(3){
+
+animation-delay:.45s;
+
+}
+
+
+
+.product-card:nth-child(4),
+.why-card:nth-child(4){
+
+animation-delay:.6s;
+
+}
+
+
+
+
+
+@keyframes zCard{
+
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =====================================================
+   ZAVITA
+   ANIMATIONS.CSS
+   PREMIUM MOTION SYSTEM v3
+   PARTE 2/2
+===================================================== */
+
+
+/* =====================================================
+   GOLD LIGHT EFFECT
+===================================================== */
+
+
+.gold-glow{
+
+animation:zGoldGlow 4s ease-in-out infinite alternate;
+
+}
+
+
+
+@keyframes zGoldGlow{
+
+
+from{
+
+box-shadow:
+0 0 15px rgba(212,166,58,.20);
+
+}
+
+
+to{
+
+box-shadow:
+0 0 45px rgba(212,166,58,.45);
+
+}
+
+
+}
+
+
+
+
+
+/* =====================================================
+   CARD HOVER PREMIUM
+===================================================== */
+
+
+.product-card,
+.why-card{
+
+transition:
+transform .45s var(--ease-zavita),
+box-shadow .45s ease;
 
 will-change:transform;
 
@@ -277,10 +405,13 @@ will-change:transform;
 
 
 .product-card:hover,
-.why-card:hover,
-.stat:hover{
+.why-card:hover{
 
-transform:translateY(-12px) scale(1.02);
+transform:
+translateY(-12px);
+
+box-shadow:
+0 25px 60px rgba(0,0,0,.14);
 
 }
 
@@ -288,9 +419,34 @@ transform:translateY(-12px) scale(1.02);
 
 
 
-/* ==========================
+/* =====================================================
+   IMAGEN PRODUCTO
+===================================================== */
+
+
+.product-image img{
+
+transition:
+transform .6s var(--ease-zavita);
+
+}
+
+
+
+.product-card:hover .product-image img{
+
+transform:
+scale(1.08);
+
+}
+
+
+
+
+
+/* =====================================================
    SHINE PREMIUM
-========================== */
+===================================================== */
 
 
 .zavita-shine{
@@ -305,26 +461,29 @@ overflow:hidden;
 
 .zavita-shine::after{
 
+
 content:"";
 
 position:absolute;
 
 top:0;
 
-left:-120%;
+left:-150%;
 
-width:70%;
+width:80%;
 
 height:100%;
 
 
-background:linear-gradient(
+background:
+
+linear-gradient(
 
 120deg,
 
 transparent,
 
-rgba(255,255,255,.8),
+rgba(255,255,255,.55),
 
 transparent
 
@@ -333,32 +492,38 @@ transparent
 
 transform:skewX(-25deg);
 
-animation:zavitaShine 4s infinite;
+
+animation:
+
+zShine 5s infinite;
+
 
 }
 
 
 
-@keyframes zavitaShine{
+
+
+@keyframes zShine{
 
 
 0%{
 
-left:-120%;
+left:-150%;
 
 }
 
 
-50%{
+35%{
 
-left:130%;
+left:150%;
 
 }
 
 
 100%{
 
-left:130%;
+left:150%;
 
 }
 
@@ -369,70 +534,26 @@ left:130%;
 
 
 
-
-
-/* ==========================
-   BUTTON PREMIUM
-========================== */
-
-
-.btn-primary{
-
-animation:zavitaButtonPulse 4s infinite;
-
-}
-
-
-
-@keyframes zavitaButtonPulse{
-
-
-0%{
-
-box-shadow:0 0 0 0 rgba(29,77,44,.45);
-
-}
-
-
-
-70%{
-
-box-shadow:0 0 0 18px transparent;
-
-}
-
-
-
-100%{
-
-box-shadow:0 0 0 0 transparent;
-
-}
-
-
-}
-
-
-
-
-
-/* ==========================
-   BADGE FLOAT
-========================== */
+/* =====================================================
+   BADGE HERO
+===================================================== */
 
 
 .badge{
 
-animation:zavitaBadge 3s ease-in-out infinite;
+animation:
+
+zBadgeFloat 4s ease-in-out infinite;
 
 }
 
 
 
-@keyframes zavitaBadge{
+@keyframes zBadgeFloat{
 
 
-0%{
+0%,
+100%{
 
 transform:translateY(0);
 
@@ -441,14 +562,7 @@ transform:translateY(0);
 
 50%{
 
-transform:translateY(-6px);
-
-}
-
-
-100%{
-
-transform:translateY(0);
+transform:translateY(-5px);
 
 }
 
@@ -459,79 +573,36 @@ transform:translateY(0);
 
 
 
-/* ==========================
-   WAVE
-========================== */
+/* =====================================================
+   ICONOS
+===================================================== */
 
 
-.hero-wave{
-
-animation:zavitaWave 10s ease-in-out infinite;
-
-}
+.about-box .icon,
+.why-card i{
 
 
+transition:
 
-@keyframes zavitaWave{
-
-
-0%{
-
-transform:translateX(0);
+transform .4s ease,
+background .4s ease;
 
 }
 
-
-50%{
-
-transform:translateX(-15px);
-
-}
-
-
-100%{
-
-transform:translateX(0);
-
-}
-
-
-}
-
-
-
-
-
-/* ==========================
-   ICON ROTATE
-========================== */
 
 
 .about-box:hover .icon,
 .why-card:hover i{
 
-animation:zavitaRotate .6s ease;
 
-}
+transform:
 
-
-
-@keyframes zavitaRotate{
+rotateY(180deg);
 
 
-from{
+background:
 
-transform:rotate(0);
-
-}
-
-
-to{
-
-transform:rotate(360deg);
-
-}
-
+var(--gold);
 
 }
 
@@ -539,24 +610,149 @@ transform:rotate(360deg);
 
 
 
-/* ==========================
+/* =====================================================
+   WHATSAPP PREMIUM
+===================================================== */
+
+
+.whatsapp{
+
+
+animation:
+
+zWhatsapp 3.5s infinite;
+
+}
+
+
+
+@keyframes zWhatsapp{
+
+
+0%{
+
+box-shadow:
+0 0 0 0 rgba(37,211,102,.45);
+
+}
+
+
+70%{
+
+box-shadow:
+0 0 0 18px rgba(37,211,102,0);
+
+}
+
+
+100%{
+
+box-shadow:
+0 0 0 0 rgba(37,211,102,0);
+
+}
+
+
+}
+
+
+
+
+
+/* =====================================================
+   SCROLL TOP
+===================================================== */
+
+
+#scrollTop{
+
+
+transition:
+
+opacity .4s ease,
+transform .4s ease;
+
+}
+
+
+
+#scrollTop:hover{
+
+
+transform:
+
+translateY(-6px);
+
+}
+
+
+
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+
+nav{
+
+
+transition:
+
+left .45s var(--ease-zavita);
+
+}
+
+
+
+.menu.open i{
+
+
+transform:
+
+rotate(90deg);
+
+}
+
+
+
+.menu i{
+
+
+transition:
+
+transform .3s ease;
+
+}
+
+
+
+
+
+/* =====================================================
    SCROLL REVEAL
-========================== */
+===================================================== */
 
 
 .reveal{
 
+
 opacity:0;
 
-transform:translateY(50px);
+transform:
 
-transition:.9s var(--ease-premium);
+translateY(45px);
+
+transition:
+
+.8s var(--ease-zavita);
 
 }
 
 
 
 .reveal.show{
+
 
 opacity:1;
 
@@ -568,43 +764,117 @@ transform:none;
 
 
 
+/* =====================================================
+   COUNTERS
+===================================================== */
 
 
-/* ==========================
-   WHATSAPP
-========================== */
+.counter{
 
 
+display:inline-block;
+
+animation:
+
+zCounter .8s ease;
+
+}
+
+
+
+@keyframes zCounter{
+
+
+from{
+
+opacity:0;
+
+transform:scale(.7);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+
+}
+
+
+
+
+
+/* =====================================================
+   PAGE HIDDEN OPTIMIZATION
+===================================================== */
+
+
+.page-hidden *{
+
+
+animation-play-state:paused!important;
+
+}
+
+
+
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+
+:focus-visible{
+
+
+outline:
+
+3px solid var(--gold);
+
+outline-offset:
+
+4px;
+
+}
+
+
+
+
+
+/* =====================================================
+   MOBILE PERFORMANCE
+===================================================== */
+
+
+@media(max-width:768px){
+
+
+.hero-image img,
+.badge,
 .whatsapp{
 
-animation:zavitaWhatsapp 3s infinite;
+
+animation-duration:
+
+6s;
 
 }
 
 
 
-@keyframes zavitaWhatsapp{
+.product-card:hover,
+.why-card:hover{
 
 
-0%{
+transform:
 
-box-shadow:0 0 0 0 rgba(37,211,102,.5);
-
-}
-
-
-
-70%{
-
-box-shadow:0 0 0 20px transparent;
-
-}
-
-
-
-100%{
-
-box-shadow:0 0 0 0 transparent;
+translateY(-6px);
 
 }
 
@@ -615,22 +885,25 @@ box-shadow:0 0 0 0 transparent;
 
 
 
-
-/* ==========================
-   REDUCIR MOVIMIENTO
-========================== */
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
 
 
 @media(prefers-reduced-motion:reduce){
 
 
-*{
+*,
+*::before,
+*::after{
 
-animation-duration:.01ms!important;
 
-animation-iteration-count:1!important;
+animation:none!important;
 
-transition-duration:.01ms!important;
+transition:none!important;
+
+scroll-behavior:auto!important;
+
 
 }
 
@@ -639,5 +912,5 @@ transition-duration:.01ms!important;
 
 
 /* =====================================================
-   FIN ANIMATIONS PREMIUM v2
+   FIN ANIMATIONS PREMIUM v3
 ===================================================== */
