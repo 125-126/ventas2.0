@@ -317,37 +317,38 @@ nav a:hover::after{
 
 
 
-/* ==========================
- HERO
-========================== */
-
+/*=========================
+HERO
+=========================*/
 
 .hero{
-
-    min-height:100vh;
-
-    padding-top:120px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-
-    radial-gradient(
-    circle at top right,
-    rgba(212,166,58,.25),
-    transparent 35%
-    ),
-
-    linear-gradient(
-    135deg,
-    var(--cream),
-    white
-    );
-
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
 }
 
+/* Imagen de fondo tipo marca de agua */
+.hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../img/hero1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    opacity: 0.08; /* Cambia entre 0.05 y 0.15 si la quieres más visible */
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Todo el contenido del Hero queda encima */
+.hero > *{
+    position: relative;
+    z-index: 1;
+}
 
 
 .hero-grid{
@@ -2205,6 +2206,9 @@ transform:translateY(0px);
 }
 
 }
+
+
+
 
 /* =====================================================
    FIN STYLE.CSS
