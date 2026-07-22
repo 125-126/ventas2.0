@@ -333,7 +333,7 @@ HERO
     position: absolute;
     inset: 0;
 
-    background-image: url("../img/hero1.png");
+    background-image: href="img/logo.png">
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
