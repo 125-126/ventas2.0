@@ -612,7 +612,22 @@ Todos los derechos reservados.
 
 
 
+// ======================
+// PRELOADER ZAVITA
+// ======================
 
+window.addEventListener("load",()=>{
+
+const loader = document.querySelector(".loader");
+
+setTimeout(()=>{
+
+loader.classList.add("hide");
+
+},3500);
+
+
+});
 
 
 
