@@ -25,31 +25,26 @@ const scrollTopBtn = document.getElementById("scrollTop");
 
 
 /* ==========================
-   LOADER
+   LOADER ZAVITA PREMIUM
 ========================== */
 
 
 window.addEventListener("load",()=>{
 
 
-    const loader =
-    document.querySelector(".loader");
+    const loader = document.querySelector(".loader");
 
 
     setTimeout(()=>{
 
 
-        loader.style.opacity="0";
+        loader.classList.add("hide");
 
 
-        loader.style.visibility="hidden";
-
-
-    },800);
+    },4000);
 
 
 });
-
 
 
 
