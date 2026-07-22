@@ -1,7 +1,7 @@
 /* =====================================================
    ZAVITA
    APP.JS
-   SISTEMA DE INTERACCIONES PREMIUM v3
+   SISTEMA INTERACCIONES PREMIUM v4
 ===================================================== */
 
 
@@ -13,38 +13,35 @@ document.addEventListener("DOMContentLoaded",()=>{
 ========================== */
 
 
-const header = document.getElementById("header");
+const header=document.querySelector("#header");
+const menu=document.querySelector("#menu");
+const nav=document.querySelector("#nav");
+const navLinks=document.querySelectorAll("nav a");
 
-const menu = document.getElementById("menu");
+const loader=document.querySelector(".loader");
 
-const nav = document.getElementById("nav");
+const scrollTop=document.querySelector("#scrollTop");
 
-const navLinks = document.querySelectorAll("nav a");
-
-const scrollTopBtn = document.getElementById("scrollTop");
-
-const loader = document.querySelector(".loader");
-
-const heroImage = document.querySelector(".hero-image");
-
-const whatsapp = document.querySelector(".whatsapp");
-
+const heroImage=document.querySelector(".hero-image");
 
 
 
 /* =====================================================
-   LOADER FIX ZAVITA
+   LOADER
 ===================================================== */
 
 
 if(loader){
 
+window.addEventListener("load",()=>{
+
 setTimeout(()=>{
 
 loader.classList.add("hide");
 
-},2500);
+},800);
 
+});
 
 }
 
@@ -56,25 +53,28 @@ loader.classList.add("hide");
 ===================================================== */
 
 
-window.addEventListener("scroll",()=>{
+function headerScroll(){
 
 
-if(header){
+if(window.scrollY>50){
 
-if(window.scrollY > 50){
-
-header.classList.add("scrolled");
+header?.classList.add("scrolled");
 
 }else{
 
-header.classList.remove("scrolled");
+header?.classList.remove("scrolled");
 
 }
 
+
 }
 
 
-});
+window.addEventListener(
+"scroll",
+headerScroll
+);
+
 
 
 
@@ -90,16 +90,23 @@ if(menu && nav){
 menu.addEventListener("click",()=>{
 
 
+const active=
 nav.classList.toggle("active");
 
-menu.classList.toggle("open");
+
+menu.classList.toggle(
+"open",
+active
+);
+
+
+menu.setAttribute(
+"aria-expanded",
+active
+);
 
 
 });
-
-
-}
-
 
 
 
@@ -109,24 +116,24 @@ navLinks.forEach(link=>{
 link.addEventListener("click",()=>{
 
 
-if(nav){
-
 nav.classList.remove("active");
-
-}
-
-
-if(menu){
 
 menu.classList.remove("open");
 
+menu.setAttribute(
+"aria-expanded",
+false
+);
+
+
+});
+
+
+});
+
+
 }
 
-
-});
-
-
-});
 
 
 
@@ -137,15 +144,21 @@ menu.classList.remove("open");
 ===================================================== */
 
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+document.querySelectorAll(
+'a[href^="#"]'
+)
+.forEach(link=>{
 
 
-anchor.addEventListener("click",function(e){
+link.addEventListener(
+"click",
+e=>{
 
 
 const target=document.querySelector(
-this.getAttribute("href")
+link.getAttribute("href")
 );
+
 
 
 if(target){
@@ -155,9 +168,7 @@ e.preventDefault();
 
 target.scrollIntoView({
 
-behavior:"smooth",
-
-block:"start"
+behavior:"smooth"
 
 });
 
@@ -165,32 +176,36 @@ block:"start"
 }
 
 
+
 });
 
 
 });
+
 
 
 
 
 
 /* =====================================================
-   REVEAL ANIMATIONS
+   REVEAL SCROLL
 ===================================================== */
 
 
-const revealElements=document.querySelectorAll(
-
-".about-box, .product-card, .why-card, .stat, .cta-content"
-
+const revealItems=document.querySelectorAll(
+".about-box,.product-card,.why-card,.stat,.cta-content"
 );
 
 
 
-if("IntersectionObserver" in window){
+if(
+"IntersectionObserver" in window
+){
 
 
-const observer=new IntersectionObserver((entries)=>{
+const revealObserver=
+new IntersectionObserver(
+entries=>{
 
 
 entries.forEach(entry=>{
@@ -198,70 +213,76 @@ entries.forEach(entry=>{
 
 if(entry.isIntersecting){
 
+entry.target.classList.add(
+"show"
+);
 
-entry.target.classList.add("show");
+
+revealObserver.unobserve(
+entry.target
+);
 
 
 }
 
 
+
 });
 
 
-},{
-
+},
+{
 threshold:.15
-
-});
-
-
-
-revealElements.forEach(element=>{
+}
+);
 
 
-element.classList.add("reveal");
 
-observer.observe(element);
+revealItems.forEach(item=>{
+
+
+item.classList.add(
+"reveal"
+);
+
+
+revealObserver.observe(item);
 
 
 });
 
 
 }
+
+
+
+
 
 
 /* =====================================================
-   BACK TO TOP
+   BOTON ARRIBA
 ===================================================== */
 
 
-if(scrollTopBtn){
+if(scrollTop){
 
 
-window.addEventListener("scroll",()=>{
+window.addEventListener(
+"scroll",
+()=>{
 
 
-if(window.scrollY > 500){
-
-
-scrollTopBtn.classList.add("active");
-
-
-}else{
-
-
-scrollTopBtn.classList.remove("active");
-
-
-}
+scrollTop.classList.toggle(
+"active",
+window.scrollY>500
+);
 
 
 });
 
 
 
-
-scrollTopBtn.addEventListener("click",()=>{
+scrollTop.onclick=()=>{
 
 
 window.scrollTo({
@@ -273,7 +294,8 @@ behavior:"smooth"
 });
 
 
-});
+};
+
 
 
 }
@@ -281,22 +303,47 @@ behavior:"smooth"
 
 
 
+
+
 /* =====================================================
-   HERO PARALLAX
+   PARALLAX HERO OPTIMIZADO
 ===================================================== */
 
 
-if(heroImage){
+if(heroImage && window.innerWidth>768){
 
 
-window.addEventListener("scroll",()=>{
+let ticking=false;
 
 
-const movement = window.scrollY * 0.08;
+window.addEventListener(
+"scroll",
+()=>{
 
 
-heroImage.style.transform =
-`translateY(${movement}px)`;
+if(!ticking){
+
+
+requestAnimationFrame(()=>{
+
+
+heroImage.style.transform=
+`
+translateY(${window.scrollY*0.04}px)
+`;
+
+
+
+ticking=false;
+
+
+});
+
+
+ticking=true;
+
+
+}
 
 
 });
@@ -309,37 +356,48 @@ heroImage.style.transform =
 
 
 
+
 /* =====================================================
-   CARD HOVER 3D
+   EFECTO 3D CARDS
 ===================================================== */
 
 
 const cards=document.querySelectorAll(
-".product-card, .why-card"
+".product-card,.why-card"
 );
 
+
+
+if(window.innerWidth>768){
 
 
 cards.forEach(card=>{
 
 
-card.addEventListener("mousemove",(e)=>{
+card.addEventListener(
+"mousemove",
+e=>{
 
 
-const box=card.getBoundingClientRect();
+const rect=
+card.getBoundingClientRect();
 
 
-const x=e.clientX-box.left;
-
-const y=e.clientY-box.top;
-
-
-const rotateX =
--(y-box.height/2)/25;
+const x=
+e.clientX-rect.left;
 
 
-const rotateY =
-(x-box.width/2)/25;
+const y=
+e.clientY-rect.top;
+
+
+
+const rotateX=
+-(y-rect.height/2)/30;
+
+
+const rotateY=
+(x-rect.width/2)/30;
 
 
 
@@ -348,7 +406,7 @@ card.style.transform=
 perspective(900px)
 rotateX(${rotateX}deg)
 rotateY(${rotateY}deg)
-scale(1.03)
+translateY(-10px)
 `;
 
 
@@ -359,7 +417,9 @@ scale(1.03)
 
 
 
-card.addEventListener("mouseleave",()=>{
+card.addEventListener(
+"mouseleave",
+()=>{
 
 
 card.style.transform="";
@@ -371,27 +431,6 @@ card.style.transform="";
 });
 
 
-
-
-
-
-/* =====================================================
-   WHATSAPP PULSE
-===================================================== */
-
-
-if(whatsapp){
-
-
-setInterval(()=>{
-
-
-whatsapp.classList.toggle("pulse");
-
-
-},2500);
-
-
 }
 
 
@@ -399,116 +438,65 @@ whatsapp.classList.toggle("pulse");
 
 
 
+
 /* =====================================================
-   FOOTER YEAR AUTOMATICO
+   ACTIVE MENU
 ===================================================== */
 
 
-const year=new Date().getFullYear();
-
-
-const copyright=document.querySelector(".copyright");
-
-
-if(copyright){
-
-
-copyright.innerHTML=
-
-`
-© ${year} ZAVITA.
-Todos los derechos reservados.
-`;
-
-
-}
-
-
-
-
-
-
-/* =====================================================
-   IMAGENES LAZY LOAD
-===================================================== */
-
-
-const images=document.querySelectorAll("img");
-
-
-images.forEach(img=>{
-
-
-if(!img.hasAttribute("loading")){
-
-
-img.setAttribute(
-"loading",
-"lazy"
-);
-
-
-}
-
-
-});
-
-
-
-
-
-
-
-/* =====================================================
-   ACTIVE MENU LINK
-===================================================== */
-
-
-const sections=document.querySelectorAll(
+const sections=
+document.querySelectorAll(
 "section[id]"
 );
 
 
 
-window.addEventListener("scroll",()=>{
+function activeMenu(){
 
 
-let scrollPosition=window.scrollY+150;
+let position=
+window.scrollY+200;
 
 
 
 sections.forEach(section=>{
 
 
-const sectionTop=section.offsetTop;
+const top=
+section.offsetTop;
 
-const sectionHeight=section.offsetHeight;
 
-const sectionId=section.id;
+const height=
+section.offsetHeight;
+
+
+const id=
+section.id;
 
 
 
 if(
-scrollPosition >= sectionTop &&
-scrollPosition <= sectionTop+sectionHeight
+position>=top &&
+position<=top+height
 ){
-
 
 
 navLinks.forEach(link=>{
 
 
-link.classList.remove("active");
+link.classList.remove(
+"active"
+);
 
 
 
 if(
-link.getAttribute("href")==="#"+sectionId
+link.hash==="#"+id
 ){
 
-
-link.classList.add("active");
-
+link.classList.add(
+"active"
+);
 
 }
 
@@ -523,93 +511,14 @@ link.classList.add("active");
 });
 
 
-});
-
-
-   /* =====================================================
-   CURSOR EFFECT
-===================================================== */
-
-
-const buttons=document.querySelectorAll(
-".btn-primary, .btn-secondary, .product-card"
-);
-
-
-
-buttons.forEach(button=>{
-
-
-button.addEventListener("mouseenter",()=>{
-
-
-button.style.transition=".3s ease";
-
-
-});
-
-
-});
-
-
-
-
-
-
-/* =====================================================
-   CONTROL PESTAÑA OCULTA
-===================================================== */
-
-
-document.addEventListener(
-"visibilitychange",
-()=>{
-
-
-if(document.hidden){
-
-
-document.body.classList.add(
-"page-hidden"
-);
-
-
-}else{
-
-
-document.body.classList.remove(
-"page-hidden"
-);
-
-
 }
 
-
-});
-
-
-
-
-
-
-/* =====================================================
-   PROTECCION CONTRA ERRORES
-===================================================== */
 
 
 window.addEventListener(
-"error",
-(event)=>{
-
-
-console.warn(
-"ZAVITA SYSTEM:",
-event.message
+"scroll",
+activeMenu
 );
-
-
-});
-
 
 
 
@@ -617,17 +526,55 @@ event.message
 
 
 /* =====================================================
-   SISTEMA LISTO
+   LAZY LOAD
 ===================================================== */
 
 
+document
+.querySelectorAll("img")
+.forEach(img=>{
+
+
+img.loading="lazy";
+
+
+});
+
+
+
+
+
+
+
+/* =====================================================
+   COPYRIGHT AUTOMATICO
+===================================================== */
+
+
+const copyright=
+document.querySelector(
+".copyright"
+);
+
+
+
+if(copyright){
+
+
+copyright.innerHTML=
+`
+© ${new Date().getFullYear()} ZAVITA.
+Todos los derechos reservados.
+`;
+
+}
+
+
+
 console.log(
-"ZAVITA SYSTEM ONLINE ✓"
+"ZAVITA PREMIUM SYSTEM ONLINE ✓"
 );
 
 
 
 });
-/* =====================================================
-   FIN APP.JS
-===================================================== */                       
