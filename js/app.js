@@ -1,8 +1,18 @@
 /* =====================================================
    ZAVITA
    APP.JS
-   SISTEMA DE INTERACCIONES
+   SISTEMA DE INTERACCIONES PREMIUM v2
 ===================================================== */
+
+
+
+/* =====================================================
+   DOM READY
+===================================================== */
+
+
+document.addEventListener("DOMContentLoaded",()=>{
+
 
 
 /* ==========================
@@ -12,68 +22,80 @@
 
 const header = document.getElementById("header");
 
-const menu = document.querySelector(".menu");
+const menu = document.getElementById("menu");
 
-const nav = document.querySelector("nav");
+const nav = document.getElementById("nav");
 
 const navLinks = document.querySelectorAll("nav a");
 
 const scrollTopBtn = document.getElementById("scrollTop");
 
+const loader = document.querySelector(".loader");
+
+const heroImage = document.querySelector(".hero-image");
+
+const whatsapp = document.querySelector(".whatsapp");
 
 
 
 
-/* ==========================
+
+
+
+/* =====================================================
    LOADER ZAVITA PREMIUM
-========================== */
+===================================================== */
 
 
-window.addEventListener("load",()=>{
+if(loader){
 
 
-    const loader = document.querySelector(".loader");
+setTimeout(()=>{
 
 
-    setTimeout(()=>{
+loader.classList.add("hide");
 
 
-        loader.classList.add("hide");
+},3500);
 
 
-    },4000);
-
-
-});
+}
 
 
 
 
 
 
-/* ==========================
+
+/* =====================================================
    HEADER SCROLL
-========================== */
+===================================================== */
 
 
 window.addEventListener("scroll",()=>{
 
 
-    if(window.scrollY > 50){
+if(header){
 
 
-        header.classList.add("scrolled");
+if(window.scrollY > 50){
 
 
-    }
-
-    else{
+header.classList.add("scrolled");
 
 
-        header.classList.remove("scrolled");
+}
+
+else{
 
 
-    }
+header.classList.remove("scrolled");
+
+
+}
+
+
+}
 
 
 });
@@ -84,18 +106,9 @@ window.addEventListener("scroll",()=>{
 
 
 
-/* ==========================
-   MENU MOBILE ZAVITA
-========================== */
-
-
-document.addEventListener("DOMContentLoaded",()=>{
-
-
-const menu = document.getElementById("menu");
-
-const nav = document.getElementById("nav");
-
+/* =====================================================
+   MENU MOBILE
+===================================================== */
 
 
 if(menu && nav){
@@ -107,7 +120,42 @@ menu.addEventListener("click",()=>{
 nav.classList.toggle("active");
 
 
+menu.classList.toggle("open");
+
+
 });
+
+
+}
+
+
+
+
+
+
+
+/* CERRAR MENU */
+
+
+navLinks.forEach(link=>{
+
+
+link.addEventListener("click",()=>{
+
+
+if(nav){
+
+
+nav.classList.remove("active");
+
+
+}
+
+
+if(menu){
+
+
+menu.classList.remove("open");
 
 
 }
@@ -116,23 +164,6 @@ nav.classList.toggle("active");
 });
 
 
-
-
-/* CERRAR MENU AL NAVEGAR */
-
-
-navLinks.forEach(link=>{
-
-
-    link.addEventListener("click",()=>{
-
-
-        nav.classList.remove("active");
-
-
-    });
-
-
 });
 
 
@@ -141,9 +172,9 @@ navLinks.forEach(link=>{
 
 
 
-/* ==========================
+/* =====================================================
    SCROLL SUAVE
-========================== */
+===================================================== */
 
 
 document.querySelectorAll('a[href^="#"]')
@@ -153,30 +184,32 @@ document.querySelectorAll('a[href^="#"]')
 anchor.addEventListener("click",function(e){
 
 
-    const target =
-    document.querySelector(
-    this.getAttribute("href")
-    );
+const target =
+document.querySelector(
+this.getAttribute("href")
+);
 
 
-    if(target){
+
+if(target){
 
 
-        e.preventDefault();
+e.preventDefault();
 
 
-        target.scrollIntoView({
+
+target.scrollIntoView({
 
 
-            behavior:"smooth",
+behavior:"smooth",
 
-            block:"start"
-
-
-        });
+block:"start"
 
 
-    }
+});
+
+
+}
 
 
 });
@@ -190,82 +223,86 @@ anchor.addEventListener("click",function(e){
 
 
 
-/* ==========================
-   COUNTERS
-========================== */
+
+/* =====================================================
+   COUNTERS PREMIUM
+===================================================== */
 
 
 const counters =
 document.querySelectorAll(".counter");
 
 
-
-let started=false;
-
-
-
-function startCounters(){
-
-
-    if(started) return;
-
-
-    counters.forEach(counter=>{
-
-
-        const target =
-        +counter.dataset.target;
-
-
-        let count=0;
+let counterStarted=false;
 
 
 
-        const speed =
-        target / 80;
+function runCounters(){
+
+
+if(counterStarted) return;
 
 
 
-        const update=()=>{
+counters.forEach(counter=>{
 
 
-            count += speed;
-
-
-            if(count < target){
-
-
-                counter.innerText =
-                Math.floor(count);
-
-
-                requestAnimationFrame(update);
-
-
-            }
-
-
-            else{
-
-
-                counter.innerText =
-                target + "+";
-
-
-            }
-
-
-        };
-
-
-        update();
+const target =
+Number(counter.dataset.target);
 
 
 
-    });
+let current=0;
 
 
-    started=true;
+
+const increment =
+target / 70;
+
+
+
+function update(){
+
+
+current += increment;
+
+
+
+if(current < target){
+
+
+counter.textContent =
+Math.floor(current);
+
+
+requestAnimationFrame(update);
+
+
+}
+
+else{
+
+
+counter.textContent =
+target + "+";
+
+
+}
+
+
+}
+
+
+
+update();
+
+
+
+});
+
+
+
+counterStarted=true;
 
 
 }
@@ -273,34 +310,33 @@ function startCounters(){
 
 
 
-
-
 window.addEventListener("scroll",()=>{
 
 
-    const stats =
-    document.querySelector(".statistics");
+const statistics =
+document.querySelector(".statistics");
 
 
-    if(stats){
+
+if(statistics){
 
 
-        const position =
-        stats.getBoundingClientRect()
-        .top;
+const top =
+statistics.getBoundingClientRect().top;
 
 
-        if(position <
-        window.innerHeight - 150){
+
+if(top <
+window.innerHeight - 120){
 
 
-            startCounters();
+runCounters();
 
 
-        }
+}
 
 
-    }
+}
 
 
 });
@@ -311,9 +347,10 @@ window.addEventListener("scroll",()=>{
 
 
 
-/* ==========================
+
+/* =====================================================
    SCROLL REVEAL
-========================== */
+===================================================== */
 
 
 const revealElements =
@@ -324,36 +361,25 @@ document.querySelectorAll(
 
 
 const revealObserver =
-new IntersectionObserver(
-(entries)=>{
+new IntersectionObserver((entries)=>{
 
 
 entries.forEach(entry=>{
 
 
-    if(entry.isIntersecting){
+if(entry.isIntersecting){
 
 
-        entry.target.classList.add("reveal");
+entry.target.classList.add("show");
 
 
-        setTimeout(()=>{
-
-
-            entry.target.classList.add("show");
-
-
-        },100);
-
-
-    }
+}
 
 
 });
 
 
-},
-{
+},{
 
 
 threshold:.15
@@ -364,65 +390,72 @@ threshold:.15
 
 
 
-revealElements.forEach(el=>{
+revealElements.forEach(element=>{
 
 
-    revealObserver.observe(el);
+element.classList.add("reveal");
 
 
-});
-
-
-
-
-
-
-
-/* ==========================
-   BUTTON BACK TOP
-========================== */
-
-
-window.addEventListener("scroll",()=>{
-
-
-    if(window.scrollY > 500){
-
-
-        scrollTopBtn.classList.add("active");
-
-
-    }
-
-    else{
-
-
-        scrollTopBtn.classList.remove("active");
-
-
-    }
+revealObserver.observe(element);
 
 
 });
 
 
+
+
+
+
+
+
+
+/* =====================================================
+   BACK TO TOP
+===================================================== */
 
 
 if(scrollTopBtn){
 
 
+
+window.addEventListener("scroll",()=>{
+
+
+if(window.scrollY > 500){
+
+
+scrollTopBtn.classList.add("active");
+
+
+}
+
+else{
+
+
+scrollTopBtn.classList.remove("active");
+
+
+}
+
+
+});
+
+
+
+
+
 scrollTopBtn.addEventListener("click",()=>{
 
 
-    window.scrollTo({
+window.scrollTo({
 
 
-        top:0,
+top:0,
 
-        behavior:"smooth"
+behavior:"smooth"
 
 
-    });
+});
 
 
 });
@@ -436,45 +469,42 @@ scrollTopBtn.addEventListener("click",()=>{
 
 
 
-/* ==========================
-   HERO PARALLAX
-========================== */
+/* =====================================================
+   HERO PARALLAX SEGURO
+===================================================== */
 
 
-const heroImage =
-document.querySelector(".hero-image");
+if(heroImage){
 
 
 
 window.addEventListener("scroll",()=>{
 
 
-    if(heroImage){
-
-
-        let offset =
-        window.scrollY * .15;
+const movement =
+window.scrollY * .08;
 
 
 
-        heroImage.style.transform =
-        `translateY(${offset}px)`;
+heroImage.style.translate =
+`0 ${movement}px`;
 
-
-    }
 
 
 });
 
 
+}
 
 
 
 
 
-/* ==========================
-   CARD TILT EFFECT
-========================== */
+
+
+/* =====================================================
+   CARD TILT PREMIUM
+===================================================== */
 
 
 const cards =
@@ -487,40 +517,38 @@ document.querySelectorAll(
 cards.forEach(card=>{
 
 
-card.addEventListener(
-"mousemove",
-(e)=>{
+
+card.addEventListener("mousemove",(e)=>{
 
 
-const rect =
+const box =
 card.getBoundingClientRect();
 
 
 
 const x =
-e.clientX - rect.left;
+e.clientX - box.left;
 
 
 
 const y =
-e.clientY - rect.top;
-
-
-
-const rotateY =
-(x - rect.width/2)/20;
+e.clientY - box.top;
 
 
 
 const rotateX =
--(y - rect.height/2)/20;
+-(y - box.height / 2) / 25;
+
+
+
+const rotateY =
+(x - box.width / 2) / 25;
 
 
 
 card.style.transform =
-
 `
-perspective(700px)
+perspective(900px)
 rotateX(${rotateX}deg)
 rotateY(${rotateY}deg)
 scale(1.03)
@@ -533,9 +561,8 @@ scale(1.03)
 
 
 
-card.addEventListener(
-"mouseleave",
-()=>{
+
+card.addEventListener("mouseleave",()=>{
 
 
 card.style.transform="";
@@ -544,22 +571,17 @@ card.style.transform="";
 });
 
 
+
 });
 
 
 
+});
 
 
-
-
-/* ==========================
-   WHATSAPP MICRO EFFECT
-========================== */
-
-
-const whatsapp =
-document.querySelector(".whatsapp");
-
+/* =====================================================
+   WHATSAPP MICRO ANIMATION
+===================================================== */
 
 
 if(whatsapp){
@@ -582,9 +604,9 @@ whatsapp.classList.toggle("pulse");
 
 
 
-/* ==========================
-   CURRENT YEAR FOOTER
-========================== */
+/* =====================================================
+   FOOTER YEAR AUTOMATICO
+===================================================== */
 
 
 const year =
@@ -612,22 +634,240 @@ Todos los derechos reservados.
 
 
 
-// ======================
-// PRELOADER ZAVITA
-// ======================
 
-window.addEventListener("load",()=>{
 
-const loader = document.querySelector(".loader");
 
-setTimeout(()=>{
 
-loader.classList.add("hide");
 
-},3500);
+/* =====================================================
+   IMAGE LAZY LOAD SUPPORT
+===================================================== */
+
+
+const images =
+document.querySelectorAll("img");
+
+
+
+images.forEach(img=>{
+
+
+if(!img.hasAttribute("loading")){
+
+
+img.setAttribute(
+"loading",
+"lazy"
+);
+
+
+}
 
 
 });
+
+
+
+
+
+
+
+
+/* =====================================================
+   ACTIVE LINK MENU
+===================================================== */
+
+
+const sections =
+document.querySelectorAll("section[id]");
+
+
+
+window.addEventListener("scroll",()=>{
+
+
+
+let scrollPosition =
+window.scrollY + 150;
+
+
+
+sections.forEach(section=>{
+
+
+const sectionTop =
+section.offsetTop;
+
+
+
+const sectionHeight =
+section.offsetHeight;
+
+
+
+const sectionId =
+section.getAttribute("id");
+
+
+
+if(
+scrollPosition >= sectionTop &&
+scrollPosition <= sectionTop + sectionHeight
+){
+
+
+
+navLinks.forEach(link=>{
+
+
+link.classList.remove("active");
+
+
+if(
+link.getAttribute("href")
+===
+"#"+sectionId
+){
+
+
+link.classList.add("active");
+
+
+}
+
+
+});
+
+
+}
+
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+
+
+/* =====================================================
+   CURSOR EFFECT PREMIUM
+===================================================== */
+
+
+const buttons =
+document.querySelectorAll(
+".btn-primary, .btn-secondary, .product-card"
+);
+
+
+
+buttons.forEach(button=>{
+
+
+button.addEventListener("mouseenter",()=>{
+
+
+button.style.transition =
+".3s ease";
+
+
+});
+
+
+
+});
+
+
+
+
+
+
+
+
+/* =====================================================
+   STOP ANIMATIONS WHEN TAB HIDDEN
+===================================================== */
+
+
+document.addEventListener(
+"visibilitychange",
+()=>{
+
+
+if(document.hidden){
+
+
+document.body.classList.add(
+"page-hidden"
+);
+
+
+}
+
+else{
+
+
+document.body.classList.remove(
+"page-hidden"
+);
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+
+/* =====================================================
+   SECURITY CLEAN
+   EVITA ERRORES DEL DOM
+===================================================== */
+
+
+window.addEventListener(
+"error",
+(event)=>{
+
+
+console.warn(
+"ZAVITA SYSTEM:",
+event.message
+);
+
+
+});
+
+
+
+
+
+
+
+
+/* =====================================================
+   FINAL SYSTEM READY
+===================================================== */
+
+
+console.log(
+"ZAVITA SYSTEM ONLINE ✓"
+);
+
+
+
 
 
 
