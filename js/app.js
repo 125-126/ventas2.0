@@ -1,18 +1,11 @@
 /* =====================================================
    ZAVITA
    APP.JS
-   SISTEMA DE INTERACCIONES PREMIUM v2
-===================================================== */
-
-
-
-/* =====================================================
-   DOM READY
+   SISTEMA DE INTERACCIONES PREMIUM v3
 ===================================================== */
 
 
 document.addEventListener("DOMContentLoaded",()=>{
-
 
 
 /* ==========================
@@ -39,30 +32,21 @@ const whatsapp = document.querySelector(".whatsapp");
 
 
 
-
-
-
 /* =====================================================
-   LOADER ZAVITA PREMIUM
+   LOADER FIX ZAVITA
 ===================================================== */
 
 
 if(loader){
 
-
 setTimeout(()=>{
-
 
 loader.classList.add("hide");
 
-
-},3500);
+},2500);
 
 
 }
-
-
-
 
 
 
@@ -77,31 +61,20 @@ window.addEventListener("scroll",()=>{
 
 if(header){
 
-
 if(window.scrollY > 50){
-
 
 header.classList.add("scrolled");
 
-
-}
-
-else{
-
+}else{
 
 header.classList.remove("scrolled");
 
-
 }
-
 
 }
 
 
 });
-
-
-
 
 
 
@@ -119,7 +92,6 @@ menu.addEventListener("click",()=>{
 
 nav.classList.toggle("active");
 
-
 menu.classList.toggle("open");
 
 
@@ -131,12 +103,6 @@ menu.classList.toggle("open");
 
 
 
-
-
-
-/* CERRAR MENU */
-
-
 navLinks.forEach(link=>{
 
 
@@ -145,18 +111,14 @@ link.addEventListener("click",()=>{
 
 if(nav){
 
-
 nav.classList.remove("active");
-
 
 }
 
 
 if(menu){
 
-
 menu.classList.remove("open");
-
 
 }
 
@@ -165,8 +127,6 @@ menu.classList.remove("open");
 
 
 });
-
-
 
 
 
@@ -177,35 +137,28 @@ menu.classList.remove("open");
 ===================================================== */
 
 
-document.querySelectorAll('a[href^="#"]')
-.forEach(anchor=>{
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 
 
 anchor.addEventListener("click",function(e){
 
 
-const target =
-document.querySelector(
+const target=document.querySelector(
 this.getAttribute("href")
 );
 
 
-
 if(target){
-
 
 e.preventDefault();
 
 
-
 target.scrollIntoView({
-
 
 behavior:"smooth",
 
 block:"start"
 
-
 });
 
 
@@ -216,152 +169,28 @@ block:"start"
 
 
 });
-
-
-
 
 
 
 
 
 /* =====================================================
-   COUNTERS PREMIUM
+   REVEAL ANIMATIONS
 ===================================================== */
 
 
-const counters =
-document.querySelectorAll(".counter");
+const revealElements=document.querySelectorAll(
 
-
-let counterStarted=false;
-
-
-
-function runCounters(){
-
-
-if(counterStarted) return;
-
-
-
-counters.forEach(counter=>{
-
-
-const target =
-Number(counter.dataset.target);
-
-
-
-let current=0;
-
-
-
-const increment =
-target / 70;
-
-
-
-function update(){
-
-
-current += increment;
-
-
-
-if(current < target){
-
-
-counter.textContent =
-Math.floor(current);
-
-
-requestAnimationFrame(update);
-
-
-}
-
-else{
-
-
-counter.textContent =
-target + "+";
-
-
-}
-
-
-}
-
-
-
-update();
-
-
-
-});
-
-
-
-counterStarted=true;
-
-
-}
-
-
-
-
-window.addEventListener("scroll",()=>{
-
-
-const statistics =
-document.querySelector(".statistics");
-
-
-
-if(statistics){
-
-
-const top =
-statistics.getBoundingClientRect().top;
-
-
-
-if(top <
-window.innerHeight - 120){
-
-
-runCounters();
-
-
-}
-
-
-}
-
-
-});
-
-
-
-
-
-
-
-
-/* =====================================================
-   SCROLL REVEAL
-===================================================== */
-
-
-const revealElements =
-document.querySelectorAll(
 ".about-box, .product-card, .why-card, .stat, .cta-content"
+
 );
 
 
 
-const revealObserver =
-new IntersectionObserver((entries)=>{
+if("IntersectionObserver" in window){
+
+
+const observer=new IntersectionObserver((entries)=>{
 
 
 entries.forEach(entry=>{
@@ -381,12 +210,9 @@ entry.target.classList.add("show");
 
 },{
 
-
 threshold:.15
 
-
 });
-
 
 
 
@@ -395,18 +221,13 @@ revealElements.forEach(element=>{
 
 element.classList.add("reveal");
 
-
-revealObserver.observe(element);
+observer.observe(element);
 
 
 });
 
 
-
-
-
-
-
+}
 
 
 /* =====================================================
@@ -415,7 +236,6 @@ revealObserver.observe(element);
 
 
 if(scrollTopBtn){
-
 
 
 window.addEventListener("scroll",()=>{
@@ -427,9 +247,7 @@ if(window.scrollY > 500){
 scrollTopBtn.classList.add("active");
 
 
-}
-
-else{
+}else{
 
 
 scrollTopBtn.classList.remove("active");
@@ -443,17 +261,14 @@ scrollTopBtn.classList.remove("active");
 
 
 
-
 scrollTopBtn.addEventListener("click",()=>{
 
 
 window.scrollTo({
 
-
 top:0,
 
 behavior:"smooth"
-
 
 });
 
@@ -466,29 +281,22 @@ behavior:"smooth"
 
 
 
-
-
-
 /* =====================================================
-   HERO PARALLAX SEGURO
+   HERO PARALLAX
 ===================================================== */
 
 
 if(heroImage){
 
 
-
 window.addEventListener("scroll",()=>{
 
 
-const movement =
-window.scrollY * .08;
+const movement = window.scrollY * 0.08;
 
 
-
-heroImage.style.translate =
-`0 ${movement}px`;
-
+heroImage.style.transform =
+`translateY(${movement}px)`;
 
 
 });
@@ -501,14 +309,12 @@ heroImage.style.translate =
 
 
 
-
 /* =====================================================
-   CARD TILT PREMIUM
+   CARD HOVER 3D
 ===================================================== */
 
 
-const cards =
-document.querySelectorAll(
+const cards=document.querySelectorAll(
 ".product-card, .why-card"
 );
 
@@ -517,36 +323,27 @@ document.querySelectorAll(
 cards.forEach(card=>{
 
 
-
 card.addEventListener("mousemove",(e)=>{
 
 
-const box =
-card.getBoundingClientRect();
+const box=card.getBoundingClientRect();
 
 
+const x=e.clientX-box.left;
 
-const x =
-e.clientX - box.left;
-
-
-
-const y =
-e.clientY - box.top;
-
+const y=e.clientY-box.top;
 
 
 const rotateX =
--(y - box.height / 2) / 25;
-
+-(y-box.height/2)/25;
 
 
 const rotateY =
-(x - box.width / 2) / 25;
+(x-box.width/2)/25;
 
 
 
-card.style.transform =
+card.style.transform=
 `
 perspective(900px)
 rotateX(${rotateX}deg)
@@ -571,16 +368,15 @@ card.style.transform="";
 });
 
 
-
 });
 
 
 
-});
+
 
 
 /* =====================================================
-   WHATSAPP MICRO ANIMATION
+   WHATSAPP PULSE
 ===================================================== */
 
 
@@ -603,26 +399,21 @@ whatsapp.classList.toggle("pulse");
 
 
 
-
 /* =====================================================
    FOOTER YEAR AUTOMATICO
 ===================================================== */
 
 
-const year =
-new Date().getFullYear();
+const year=new Date().getFullYear();
 
 
-
-const copyright =
-document.querySelector(".copyright");
-
+const copyright=document.querySelector(".copyright");
 
 
 if(copyright){
 
 
-copyright.innerHTML =
+copyright.innerHTML=
 
 `
 © ${year} ZAVITA.
@@ -637,16 +428,12 @@ Todos los derechos reservados.
 
 
 
-
-
 /* =====================================================
-   IMAGE LAZY LOAD SUPPORT
+   IMAGENES LAZY LOAD
 ===================================================== */
 
 
-const images =
-document.querySelectorAll("img");
-
+const images=document.querySelectorAll("img");
 
 
 images.forEach(img=>{
@@ -672,47 +459,38 @@ img.setAttribute(
 
 
 
-
 /* =====================================================
-   ACTIVE LINK MENU
+   ACTIVE MENU LINK
 ===================================================== */
 
 
-const sections =
-document.querySelectorAll("section[id]");
+const sections=document.querySelectorAll(
+"section[id]"
+);
 
 
 
 window.addEventListener("scroll",()=>{
 
 
-
-let scrollPosition =
-window.scrollY + 150;
+let scrollPosition=window.scrollY+150;
 
 
 
 sections.forEach(section=>{
 
 
-const sectionTop =
-section.offsetTop;
+const sectionTop=section.offsetTop;
 
+const sectionHeight=section.offsetHeight;
 
-
-const sectionHeight =
-section.offsetHeight;
-
-
-
-const sectionId =
-section.getAttribute("id");
+const sectionId=section.id;
 
 
 
 if(
 scrollPosition >= sectionTop &&
-scrollPosition <= sectionTop + sectionHeight
+scrollPosition <= sectionTop+sectionHeight
 ){
 
 
@@ -723,10 +501,9 @@ navLinks.forEach(link=>{
 link.classList.remove("active");
 
 
+
 if(
-link.getAttribute("href")
-===
-"#"+sectionId
+link.getAttribute("href")==="#"+sectionId
 ){
 
 
@@ -746,23 +523,15 @@ link.classList.add("active");
 });
 
 
-
 });
 
 
-
-
-
-
-
-
-/* =====================================================
-   CURSOR EFFECT PREMIUM
+   /* =====================================================
+   CURSOR EFFECT
 ===================================================== */
 
 
-const buttons =
-document.querySelectorAll(
+const buttons=document.querySelectorAll(
 ".btn-primary, .btn-secondary, .product-card"
 );
 
@@ -774,17 +543,13 @@ buttons.forEach(button=>{
 button.addEventListener("mouseenter",()=>{
 
 
-button.style.transition =
-".3s ease";
+button.style.transition=".3s ease";
 
 
 });
 
 
-
 });
-
-
 
 
 
@@ -792,7 +557,7 @@ button.style.transition =
 
 
 /* =====================================================
-   STOP ANIMATIONS WHEN TAB HIDDEN
+   CONTROL PESTAÑA OCULTA
 ===================================================== */
 
 
@@ -809,9 +574,7 @@ document.body.classList.add(
 );
 
 
-}
-
-else{
+}else{
 
 
 document.body.classList.remove(
@@ -829,11 +592,8 @@ document.body.classList.remove(
 
 
 
-
-
 /* =====================================================
-   SECURITY CLEAN
-   EVITA ERRORES DEL DOM
+   PROTECCION CONTRA ERRORES
 ===================================================== */
 
 
@@ -856,9 +616,8 @@ event.message
 
 
 
-
 /* =====================================================
-   FINAL SYSTEM READY
+   SISTEMA LISTO
 ===================================================== */
 
 
@@ -868,9 +627,7 @@ console.log(
 
 
 
-
-
-
+});
 /* =====================================================
-   END APP.JS
-===================================================== */
+   FIN APP.JS
+===================================================== */                       
