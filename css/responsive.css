@@ -1,0 +1,701 @@
+/* =====================================================
+   ZAVITA
+   RESPONSIVE.CSS
+   SISTEMA RESPONSIVE PROFESIONAL
+===================================================== */
+
+
+/* =====================================================
+   DESKTOP GRANDE
+   1400px+
+===================================================== */
+
+
+@media (min-width:1400px){
+
+
+    .container{
+
+        width:1250px;
+
+    }
+
+
+    .hero-left h1{
+
+        font-size:5.5rem;
+
+    }
+
+
+    .hero-image{
+
+        transform:scale(1.1);
+
+    }
+
+
+
+}
+
+
+
+
+
+/* =====================================================
+   LAPTOP
+   1200px - 1399px
+===================================================== */
+
+
+@media(max-width:1200px){
+
+
+
+    .hero-grid{
+
+        gap:30px;
+
+    }
+
+
+
+    .hero-left h1{
+
+        font-size:4rem;
+
+    }
+
+
+
+    .stats-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
+
+
+    .products-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
+
+
+    .why-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
+
+
+    .footer-grid{
+
+        grid-template-columns:
+
+        repeat(2,1fr);
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   TABLET
+   768px - 991px
+===================================================== */
+
+
+@media(max-width:991px){
+
+
+
+    /* NAVBAR */
+
+
+    nav{
+
+        position:fixed;
+
+        top:90px;
+
+        left:-100%;
+
+        width:100%;
+
+        background:white;
+
+        padding:40px;
+
+        transition:.4s;
+
+        box-shadow:var(--shadow);
+
+    }
+
+
+
+    nav.active{
+
+        left:0;
+
+    }
+
+
+
+    nav ul{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:25px;
+
+    }
+
+
+
+    .menu{
+
+        display:block;
+
+        cursor:pointer;
+
+    }
+
+
+
+
+    /* HERO */
+
+
+    .hero{
+
+        padding-top:150px;
+
+    }
+
+
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+
+
+    .hero-left p{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+
+
+    .hero-info{
+
+        justify-content:center;
+
+    }
+
+
+
+    .hero-right{
+
+        margin-top:50px;
+
+    }
+
+
+
+    .floating-card{
+
+        display:none;
+
+    }
+
+
+
+
+    /* ABOUT */
+
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+        gap:50px;
+
+    }
+
+
+
+    .about-image{
+
+        max-width:600px;
+
+        margin:auto;
+
+    }
+
+
+
+    /* CONTACT */
+
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   MOBILE GRANDE
+   576px - 767px
+===================================================== */
+
+
+@media(max-width:767px){
+
+
+
+    .container{
+
+        width:92%;
+
+    }
+
+
+
+
+    /* HERO */
+
+
+    .hero-left h1{
+
+        font-size:3rem;
+
+    }
+
+
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+
+
+    .btn-primary,
+    .btn-secondary{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
+
+    .hero-info{
+
+        gap:20px;
+
+        flex-wrap:wrap;
+
+    }
+
+
+
+    .hero-info h2{
+
+        font-size:1.7rem;
+
+    }
+
+
+
+
+
+    /* SECTION */
+
+
+    .section-header h2{
+
+        font-size:2rem;
+
+    }
+
+
+
+
+    /* STATS */
+
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+
+
+    /* PRODUCTS */
+
+
+    .products-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .product-image{
+
+        height:220px;
+
+    }
+
+
+
+
+    /* WHY */
+
+
+    .why-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .why-card{
+
+        padding:30px 20px;
+
+    }
+
+
+
+
+
+    /* CTA */
+
+
+    .cta h2{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+
+
+    /* CONTACT */
+
+
+    .contact-form{
+
+        padding:25px;
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   MOBILE PEQUEÑO
+   320px - 575px
+===================================================== */
+
+
+@media(max-width:575px){
+
+
+
+    .navbar{
+
+        height:75px;
+
+    }
+
+
+
+    .logo img{
+
+        width:55px;
+
+    }
+
+
+
+    nav{
+
+        top:75px;
+
+    }
+
+
+
+
+    .hero{
+
+        min-height:auto;
+
+        padding-bottom:80px;
+
+    }
+
+
+
+
+    .hero-left h1{
+
+        font-size:2.5rem;
+
+    }
+
+
+
+    .badge{
+
+        font-size:.8rem;
+
+    }
+
+
+
+    .hero-info{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+
+    .hero-info div{
+
+        text-align:center;
+
+    }
+
+
+
+    .hero-image img{
+
+        max-width:280px;
+
+        margin:auto;
+
+    }
+
+
+
+
+    .about{
+
+        padding:80px 0;
+
+    }
+
+
+
+    .experience-card{
+
+        position:relative;
+
+        left:0;
+
+        bottom:auto;
+
+        margin-top:20px;
+
+        width:100%;
+
+    }
+
+
+
+
+    .about-box{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+
+
+
+    .stat h2{
+
+        font-size:2.5rem;
+
+    }
+
+
+
+
+
+    .product-content{
+
+        padding:25px;
+
+    }
+
+
+
+
+
+    .contact-info h2{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+
+
+    .footer-grid{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+
+
+    .social{
+
+        justify-content:center;
+
+    }
+
+
+
+    .whatsapp{
+
+        width:58px;
+
+        height:58px;
+
+        right:15px;
+
+        bottom:20px;
+
+    }
+
+
+
+    #scrollTop{
+
+        right:15px;
+
+        bottom:90px;
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   EXTRA SMALL
+   320px
+===================================================== */
+
+
+@media(max-width:360px){
+
+
+
+    .hero-left h1{
+
+        font-size:2.2rem;
+
+    }
+
+
+
+    .section-header h2{
+
+        font-size:1.8rem;
+
+    }
+
+
+
+    .contact-form{
+
+        padding:20px;
+
+    }
+
+
+
+}
