@@ -59,11 +59,18 @@ button,input,textarea{font-family:inherit;}
 
 #header.scrolled{padding:10px 0; background:rgba(255,255,255,.92); backdrop-filter:blur(18px); box-shadow:var(--shadow);}
 
-.navbar{height:85px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,.75); backdrop-filter:blur(15px); border-radius:60px; padding:0 35px; box-shadow:0 15px 40px rgba(0,0,0,.08);}
+.navbar{height:85px; display:flex; justify-content:space-between; align-items:center; background:rgba(255,255,255,.85); backdrop-filter:blur(20px); border-radius:60px; padding:0 35px 0 25px; box-shadow:0 15px 40px rgba(0,0,0,.10);}
 
-.logo img{width:90px; height:90px; object-fit:contain; margin-top:15px; filter:drop-shadow(0 10px 15px rgba(0,0,0,.15)); transition:.4s;}
 
-.logo img:hover{transform:scale(1.08);}
+/* LOGO PREMIUM PARA IMAGEN CUADRADA */
+
+.logo{display:flex; align-items:center; position:relative;}
+
+.logo img{width:105px; height:105px; object-fit:cover; border-radius:50%; background:white; padding:8px; margin-top:20px; filter:drop-shadow(0 12px 18px rgba(0,0,0,.18)); transition:.4s;}
+
+.logo img:hover{transform:translateY(-5px) scale(1.05);}
+
+
 
 nav ul{display:flex; align-items:center; gap:45px;}
 
@@ -75,7 +82,9 @@ nav a::after{content:""; position:absolute; left:0; bottom:-10px; width:0; heigh
 
 nav a:hover::after{width:100%;}
 
-.menu{display:none; width:50px; height:50px; border:none; border-radius:50%; background:var(--green); color:white; font-size:1.4rem; align-items:center; justify-content:center; cursor:pointer; transition:.3s;}
+
+
+.menu{display:none; width:52px; height:52px; border:none; border-radius:50%; background:var(--green); color:white; font-size:1.4rem; align-items:center; justify-content:center; cursor:pointer; transition:.3s;}
 
 .menu:hover{background:var(--gold); transform:rotate(90deg);}
 
