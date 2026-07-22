@@ -2124,6 +2124,64 @@ footer a:hover{
 
 }
 
+/*=========================
+HUEVO FLOTANTE
+==========================*/
+
+.egg-floating{
+
+position: fixed;
+
+right: 35px;
+
+bottom: 80px;
+
+width: 70px;
+
+z-index: 999;
+
+animation: floatEgg 4s ease-in-out infinite;
+
+}
+
+
+.egg-floating img{
+
+width: 100%;
+
+display: block;
+
+filter: drop-shadow(0 10px 15px rgba(0,0,0,.15));
+
+}
+
+
+
+@keyframes floatEgg{
+
+
+0%{
+
+transform: translateY(0px) rotate(0deg);
+
+}
+
+
+50%{
+
+transform: translateY(-20px) rotate(5deg);
+
+}
+
+
+100%{
+
+transform: translateY(0px) rotate(0deg);
+
+}
+
+
+}
 
 /* =====================================================
    FIN STYLE.CSS
