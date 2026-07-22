@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-
 <head>
-
 
 <meta charset="UTF-8">
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 
 <title>
@@ -17,57 +13,40 @@ ZAVITA | Huevos Frescos y Distribución
 </title>
 
 
+<meta name="description" content="ZAVITA ofrece huevos frescos para hogares, tiendas, comercios y restaurantes. Calidad, confianza y distribución en El Salvador.">
 
-<meta 
-name="description"
-content="ZAVITA ofrece huevos frescos para hogares, tiendas, comercios y restaurantes con calidad y entrega confiable.">
 
+<meta name="keywords" content="huevos frescos, venta de huevos, distribución de huevos, huevos El Salvador, ZAVITA">
+
+
+<meta name="author" content="ZAVITA">
 
 
 <link rel="icon" href="img/logo.jpeg">
 
 
 
-
-
-<!-- GOOGLE FONTS -->
-
+<!-- GOOGLE FONT -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
-<link 
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 
 
+<!-- ICONOS -->
 
-
-
-<!-- FONT AWESOME -->
-
-
-<link 
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 
 
 <!-- CSS -->
 
-
 <link rel="stylesheet" href="css/style.css">
 
-
 <link rel="stylesheet" href="css/animations.css">
-
 
 <link rel="stylesheet" href="css/responsive.css">
 
@@ -77,43 +56,29 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-
-
 <body>
 
 
 
-
-
-<!-- =========================
+<!-- ==========================
 PRELOADER
-========================= -->
+========================== -->
 
 
 <div class="loader">
 
+    <div class="loader-circle"></div>
 
-<div class="loader-circle"></div>
-
-
-<img 
-src="img/logo.jpeg"
-alt="Logo ZAVITA">
-
-
+    <img src="img/logo.jpeg" alt="Logo ZAVITA">
 
 </div>
 
 
 
 
-
-
-
-
-<!-- =========================
-HEADER PREMIUM ZAVITA
-========================= -->
+<!-- ==========================
+HEADER
+========================== -->
 
 
 <header id="header">
@@ -130,9 +95,7 @@ HEADER PREMIUM ZAVITA
 
 <a href="#inicio" class="logo">
 
-<img 
-src="img/logo.jpeg"
-alt="ZAVITA Distribución de Huevos">
+<img src="img/logo.jpeg" alt="ZAVITA Huevos Frescos">
 
 </a>
 
@@ -140,7 +103,7 @@ alt="ZAVITA Distribución de Huevos">
 
 
 
-<!-- NAVEGACIÓN -->
+<!-- MENU DESKTOP / MOBILE -->
 
 <nav id="nav">
 
@@ -149,41 +112,33 @@ alt="ZAVITA Distribución de Huevos">
 
 
 <li>
-
 <a href="#inicio">
 Inicio
 </a>
-
 </li>
 
 
 
 <li>
-
 <a href="#nosotros">
 Nosotros
 </a>
-
 </li>
 
 
 
 <li>
-
 <a href="#productos">
 Productos
 </a>
-
 </li>
 
 
 
 <li>
-
 <a href="#contacto">
 Contacto
 </a>
-
 </li>
 
 
@@ -198,20 +153,20 @@ Contacto
 
 
 
-<!-- BOTÓN MENU MOBILE -->
 
+<!-- BOTON HAMBURGUESA -->
 
 <button 
 class="menu"
 id="menu"
-aria-label="Abrir menú">
+aria-label="Abrir menú"
+aria-expanded="false">
 
 
 <i class="fa-solid fa-bars"></i>
 
 
 </button>
-
 
 
 
@@ -224,44 +179,28 @@ aria-label="Abrir menú">
 
 </header>
 
-
-
-
-
-
-
-
-
-<!-- =========================
-HERO
-========================= -->
-
+    <!-- ==========================
+HERO PRINCIPAL
+========================== -->
 
 
 <section class="hero" id="inicio">
-
 
 
 <div class="container hero-grid">
 
 
 
-
+<!-- TEXTO PRINCIPAL -->
 
 <div class="hero-left">
 
 
-
-
-
 <div class="badge">
-
 
 <i class="fa-solid fa-egg"></i>
 
-
 Huevos frescos todos los días
-
 
 </div>
 
@@ -269,23 +208,17 @@ Huevos frescos todos los días
 
 
 
-
-
-
 <h1>
-
 
 Huevos de calidad
 
-
 <span>
+
 para tu hogar
+
 </span>
 
-
 y tu negocio.
-
-
 
 </h1>
 
@@ -293,21 +226,13 @@ y tu negocio.
 
 
 
-
-
 <p>
 
-
-En ZAVITA llevamos huevos frescos a hogares,
-tiendas y negocios de nuestra comunidad,
-ofreciendo un servicio cercano, responsable
-y comprometido con la calidad en cada entrega.
-
-
+En ZAVITA distribuimos huevos frescos
+para familias, tiendas, restaurantes y negocios.
+Trabajamos con calidad, responsabilidad y entrega confiable.
 
 </p>
-
-
 
 
 
@@ -317,11 +242,14 @@ y comprometido con la calidad en cada entrega.
 <div class="hero-buttons">
 
 
+<a href="https://wa.me/50360014234?text=Hola%20ZAVITA,%20quiero%20información%20sobre%20sus%20huevos."
+class="btn-primary"
+target="_blank">
 
-<a href="#contacto" class="btn-primary">
 
+<i class="fab fa-whatsapp"></i>
 
-Quiero comprar
+Comprar ahora
 
 
 </a>
@@ -333,13 +261,84 @@ Quiero comprar
 <a href="#productos" class="btn-secondary">
 
 
-Ver presentaciones
+<i class="fa-solid fa-box"></i>
+
+Ver productos
 
 
 </a>
 
 
 
+</div>
+
+
+
+
+<!-- DATOS RAPIDOS -->
+
+<div class="hero-stats">
+
+
+<div>
+
+
+<strong>
+100%
+</strong>
+
+
+<span>
+Frescura
+</span>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<strong>
+24/7
+</strong>
+
+
+<span>
+Atención
+</span>
+
+
+</div>
+
+
+
+
+
+<div>
+
+
+<strong>
+Local
+</strong>
+
+
+<span>
+Distribución
+</span>
+
+
+</div>
+
+
+
+</div>
+
+
+
 
 
 </div>
@@ -349,12 +348,7 @@ Ver presentaciones
 
 
 
-</div>
-
-
-
-
-
+<!-- IMAGEN HERO -->
 
 
 <div class="hero-right">
@@ -368,15 +362,7 @@ src="img/hero1.png"
 alt="Huevos frescos ZAVITA">
 
 
-
 </div>
-
-
-</div>
-
-
-
-
 
 
 
@@ -385,18 +371,21 @@ alt="Huevos frescos ZAVITA">
 
 
 
+</div>
 
 
+
+
+
+<!-- ONDA INFERIOR -->
 
 
 <div class="hero-wave">
 
 
-
 <svg 
 viewBox="0 0 1440 140"
 xmlns="http://www.w3.org/2000/svg">
-
 
 
 <path
@@ -407,664 +396,797 @@ d="M0,96L120,101.3C240,107,480,117,720,106.7C960,96,1200,64,1320,48L1440,32V160H
 </path>
 
 
-
-
 </svg>
 
 
 
-
 </div>
 
 
 
-
 </section>
-    
-<!--==================================================
+
+
+    <!-- ==========================
 NOSOTROS
-===================================================-->
+========================== -->
+
 
 <section class="about" id="nosotros">
 
-    <div class="container">
-
-
-        <div class="section-header">
-
-
-            <span class="section-tag">
-
-                SOBRE NOSOTROS
-
-            </span>
-
-
-
-            <h2>
-
-                Más que vender huevos,
-                <span>creamos confianza.</span>
-
-            </h2>
-
-
-
-            <p>
-
-                En ZAVITA llevamos huevos frescos a hogares y tiendas,
-                ofreciendo un servicio cercano, responsable y comprometido
-                con brindar calidad en cada entrega desde Zapotitán.
-
-            </p>
-
-
-        </div>
-
-
-
-
-        <div class="about-grid">
-
-
-            <div class="about-image">
-
-
-                <img 
-                src="img/about.jpeg" 
-                alt="ZAVITA distribución de huevos">
-
-
-            </div>
-
-
-
-
-            <div class="about-content">
-
-
-
-                <div class="about-box">
-
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-egg"></i>
-
-                    </div>
-
-
-
-                    <div>
-
-
-                        <h3>
-
-                            Huevos Seleccionados
-
-                        </h3>
-
-
-
-                        <p>
-
-                            Cuidamos que cada pedido llegue con productos
-                            frescos y en buenas condiciones para nuestros clientes.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-                <div class="about-box">
-
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-truck"></i>
-
-                    </div>
-
-
-
-                    <div>
-
-
-                        <h3>
-
-                            Entregas Responsables
-
-                        </h3>
-
-
-
-                        <p>
-
-                            Trabajamos para entregar tus pedidos de manera
-                            ordenada y en el tiempo acordado.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-                <div class="about-box">
-
-
-                    <div class="icon">
-
-                        <i class="fa-solid fa-heart"></i>
-
-                    </div>
-
-
-
-                    <div>
-
-
-                        <h3>
-
-                            Atención Cercana
-
-                        </h3>
-
-
-
-                        <p>
-
-                            Cada cliente es importante para nosotros.
-                            Escuchamos sus necesidades y buscamos brindar
-                            una atención personalizada.
-
-                        </p>
-
-
-                    </div>
-
-
-                </div>
-
-
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!--==================================================
-PRODUCTOS
-===================================================-->
-
-<section class="products" id="productos">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-
-                PRODUCTOS
-
-            </span>
-
-            <h2>
-
-                Presentaciones disponibles
-
-            </h2>
-
-            <p>
-
-                Contamos con diferentes presentaciones para satisfacer
-                las necesidades de hogares y negocios.
-
-            </p>
-
-        </div>
-
-        <div class="products-grid">
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img src="img/medio.jpg" alt="Cartón de 12">
-
-                </div>
-
-                <div class="product-content">
-
-                    <span>
-
-                        Hogar
-
-                    </span>
-
-                    <h3>
-
-                        Cartón de 12
-
-                    </h3>
-
-                    <p>
-
-                        Ideal para el consumo diario de la familia.
-
-                    </p>
-
-                    <a href="#contacto">
-
-                        Solicitar información
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="product-card featured">
-
-                <div class="product-image">
-
-                    <img src="img/carton.jpg" alt="Cartón de 30">
-
-                </div>
-
-                <div class="product-content">
-
-                    <span>
-
-                        Más vendido
-
-                    </span>
-
-                    <h3>
-
-                        Cartón de 30
-
-                    </h3>
-
-                    <p>
-
-                        Perfecto para familias numerosas.
-
-                    </p>
-
-                    <a href="#contacto">
-
-                        Solicitar información
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-            <article class="product-card">
-
-                <div class="product-image">
-
-                    <img src="img/mayoreo.jpg" alt="Mayoristas">
-
-                </div>
-
-                <div class="product-content">
-
-                    <span>
-
-                        Distribución
-
-                    </span>
-
-                    <h3>
-
-                        Venta al por Mayor
-
-                    </h3>
-
-                    <p>
-
-                        Soluciones para pequeños negocios, tiendas y comedores.
-
-                    </p>
-
-                    <a href="#contacto">
-
-                        Solicitar información
-
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================================================
-WHY ZAVITA
-===================================================-->
-
-<section class="why">
-
-    <div class="container">
-
-        <div class="section-header center">
-
-            <span class="section-tag">
-
-                ¿POR QUÉ ELEGIRNOS?
-
-            </span>
-
-            <h2>
-
-                Somos el aliado que tu negocio necesita.
-
-            </h2>
-
-            <p>
-
-                Nuestro compromiso es ofrecer un servicio eficiente,
-                confiable y con productos de excelente calidad.
-
-            </p>
-
-        </div>
-
-        <div class="why-grid">
-
-            <div class="why-card">
-
-                <i class="fa-solid fa-egg"></i>
-
-                <h3>
-
-                    Producto Seleccionado
-
-                </h3>
-
-                <p>
-
-                    Cada lote es cuidadosamente revisado para garantizar
-                    frescura y excelente presentación.
-
-                </p>
-
-            </div>
-
-            <div class="why-card">
-
-                <i class="fa-solid fa-truck-fast"></i>
-
-                <h3>
-
-                    Entregas Rápidas
-
-                </h3>
-
-                <p>
-
-                    Llegamos a tiempo para que tu negocio nunca se detenga.
-
-                </p>
-
-            </div>
-
-            <div class="why-card">
-
-                <i class="fa-solid fa-store"></i>
-
-                <h3>
-
-                    Venta Mayorista
-
-                </h3>
-
-                <p>
-
-                    Abastecemos tiendas, pequeños negocios y comedores.
-
-                </p>
-
-            </div>
-
-            <div class="why-card">
-
-                <i class="fa-solid fa-tags"></i>
-
-                <h3>
-
-                    Precios Competitivos
-
-                </h3>
-
-                <p>
-
-                    Ofrecemos precios pensados para impulsar
-                    el crecimiento de nuestros clientes.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================================================
-CALL TO ACTION
-===================================================-->
-
-<section class="cta">
-
-    <div class="overlay"></div>
-
-    <div class="container">
-
-        <div class="cta-content">
-
-            <span>
-
-                ZAVITA
-
-            </span>
-
-            <h2>
-
-                Calidad que llega a cada negocio.
-
-            </h2>
-
-            <p>
-
-                Solicita una cotización personalizada y descubre
-                nuestras opciones para distribución al por mayor
-                y al detalle.
-
-            </p>
-
-            <a href="#contacto" class="btn-primary">
-
-                Solicitar Cotización
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!--==================================================
-CONTACTO
-===================================================-->
-
-<section class="contact" id="contacto">
 
 <div class="container">
 
-<div class="contact-wrapper">
 
-<div class="contact-info">
+
+<div class="section-header">
+
 
 <span class="section-tag">
 
-CONTACTO
+SOBRE NOSOTROS
 
 </span>
+
+
 
 <h2>
 
-Hablemos.
+Una empresa creada para llevar
+
+<span>
+
+calidad y confianza
+
+</span>
+
+a cada cliente.
 
 </h2>
 
+
+
+
 <p>
 
-Nuestro equipo está listo para ayudarte
-con cualquier pedido o consulta.
+En ZAVITA trabajamos para entregar huevos frescos
+a hogares, tiendas y negocios de El Salvador,
+manteniendo siempre nuestro compromiso con la calidad,
+la responsabilidad y la atención cercana.
 
 </p>
 
-<div class="info">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="about-grid">
+
+
+
+
+
+<!-- IMAGEN HISTORIA -->
+
+
+<div class="about-image">
+
+
+<img 
+src="img/nuestra-historia.jpeg"
+alt="Historia de ZAVITA distribución de huevos">
+
+
+</div>
+
+
+
+
+
+
+<!-- CONTENIDO -->
+
+
+<div class="about-content">
+
+
+
+
+
+<div class="about-box">
+
+
+<div class="icon">
+
+
+<i class="fa-solid fa-seedling"></i>
+
+
+</div>
+
+
 
 <div>
 
-<i class="fa-solid fa-location-dot"></i>
 
-<span>
+<h3>
 
-Zapotitán, Ciudad Arce,
-El Salvador
+Nuestra Historia
 
-</span>
+</h3>
+
+
+<p>
+
+Nacimos con la visión de brindar
+huevos frescos y un servicio confiable
+para las familias y comercios de nuestra comunidad.
+
+</p>
+
+
 
 </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="about-box">
+
+
+<div class="icon">
+
+
+<i class="fa-solid fa-egg"></i>
+
+
+</div>
+
+
 
 <div>
 
-<i class="fa-solid fa-phone"></i>
 
-<span>
+<h3>
 
-+503 6001-4234
+Producto Seleccionado
 
-</span>
+</h3>
+
+
+<p>
+
+Cuidamos cada entrega para que nuestros clientes
+reciban productos frescos, limpios y en excelentes condiciones.
+
+</p>
+
+
 
 </div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="about-box">
+
+
+<div class="icon">
+
+
+<i class="fa-solid fa-handshake"></i>
+
+
+</div>
+
+
 
 <div>
 
-<i class="fa-solid fa-envelope"></i>
 
-<span>
+<h3>
 
-huevoszavita125@gmail.com
+Confianza y Servicio
 
-</span>
+</h3>
 
-</div>
 
-</div>
+<p>
 
-</div>
+Construimos relaciones duraderas con nuestros clientes
+basadas en responsabilidad y cumplimiento.
 
-<div class="contact-form">
+</p>
 
-<form>
 
-<input
-type="text"
-placeholder="Nombre completo">
-
-<input
-type="email"
-placeholder="Correo electrónico">
-
-<input
-type="text"
-placeholder="Teléfono">
-
-<textarea
-placeholder="Escribe tu mensaje"></textarea>
-
-<button
-type="submit">
-
-Enviar mensaje
-
-</button>
-
-</form>
 
 </div>
 
-</div>
 
 </div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
 
 </section>
 
-<!--==================================================
-FOOTER
-===================================================-->
+    <!-- ==========================
+PRODUCTOS
+========================== -->
 
-<footer>
+
+<section class="products" id="productos">
+
 
 <div class="container">
 
-<div class="footer-grid">
 
-<div>
 
-<img
-src="img/logo.jpeg"
-class="footer-logo">
+
+
+<div class="section-header">
+
+
+<span class="section-tag">
+
+PRODUCTOS
+
+</span>
+
+
+
+
+<h2>
+
+Presentaciones para cada necesidad
+
+</h2>
+
+
+
 
 <p>
 
-Distribuyendo calidad
-en cada entrega.
+Tenemos opciones para hogares,
+tiendas, restaurantes y negocios
+que buscan calidad y buen servicio.
 
 </p>
 
+
+
 </div>
 
+
+
+
+
+
+
+<div class="products-grid">
+
+
+
+
+
+
+<!-- PRODUCTO 1 -->
+
+
+<article class="product-card">
+
+
+
+<div class="product-image">
+
+
+<img 
+src="img/medio.jpg"
+alt="Cartón de huevos de 12 unidades">
+
+
+</div>
+
+
+
+
+
+<div class="product-content">
+
+
+<span>
+
+Hogar
+
+</span>
+
+
+
+
+<h3>
+
+Cartón de 12 huevos
+
+</h3>
+
+
+
+
+
+<p>
+
+Una presentación práctica
+para el consumo diario de la familia.
+
+</p>
+
+
+
+
+
+<a 
+href="https://wa.me/50360014234?text=Hola%20ZAVITA,%20quiero%20información%20sobre%20el%20cartón%20de%2012%20huevos."
+target="_blank">
+
+
+Solicitar precio
+
+<i class="fab fa-whatsapp"></i>
+
+
+</a>
+
+
+
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<!-- PRODUCTO DESTACADO -->
+
+
+<article class="product-card featured">
+
+
+
+<div class="product-image">
+
+
+<img 
+src="img/carton.jpg"
+alt="Cartón de huevos de 30 unidades">
+
+
+</div>
+
+
+
+
+
+<div class="product-content">
+
+
+<span>
+
+Más vendido
+
+</span>
+
+
+
+
+<h3>
+
+Cartón de 30 huevos
+
+</h3>
+
+
+
+
+
+<p>
+
+Ideal para familias grandes,
+tiendas y consumo frecuente.
+
+</p>
+
+
+
+
+
+<a 
+href="https://wa.me/50360014234?text=Hola%20ZAVITA,%20quiero%20información%20sobre%20el%20cartón%20de%2030%20huevos."
+target="_blank">
+
+
+Solicitar precio
+
+<i class="fab fa-whatsapp"></i>
+
+
+</a>
+
+
+
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+
+
+<!-- MAYOREO -->
+
+
+<article class="product-card">
+
+
+
+<div class="product-image">
+
+
+<img 
+src="img/mayoreo.jpg"
+alt="Distribución mayorista de huevos">
+
+
+</div>
+
+
+
+
+
+<div class="product-content">
+
+
+<span>
+
+Negocios
+
+</span>
+
+
+
+
+<h3>
+
+Venta al por mayor
+
+</h3>
+
+
+
+
+
+<p>
+
+Abastecemos tiendas,
+comedores y pequeños negocios
+con entregas programadas.
+
+</p>
+
+
+
+
+
+<a 
+href="https://wa.me/50360014234?text=Hola%20ZAVITA,%20quiero%20información%20sobre%20venta%20mayorista."
+target="_blank">
+
+
+Solicitar cotización
+
+<i class="fab fa-whatsapp"></i>
+
+
+</a>
+
+
+
+</div>
+
+
+
+</article>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+    <!-- ==========================
+POR QUÉ ELEGIR ZAVITA
+========================== -->
+
+
+<section class="why">
+
+
+<div class="container">
+
+
+
+
+
+<div class="section-header center">
+
+
+<span class="section-tag">
+
+¿POR QUÉ ELEGIRNOS?
+
+</span>
+
+
+
+<h2>
+
+Calidad y confianza en cada entrega.
+
+</h2>
+
+
+
+<p>
+
+Trabajamos para que hogares y negocios
+reciban huevos frescos con un servicio
+responsable y cercano.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="why-grid">
+
+
+
+
+
+<div class="why-card">
+
+
+<i class="fa-solid fa-egg"></i>
+
+
+<h3>
+
+Huevos Frescos
+
+</h3>
+
+
+<p>
+
+Seleccionamos nuestros productos
+para garantizar calidad y buena presentación.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="why-card">
+
+
+<i class="fa-solid fa-truck-fast"></i>
+
+
+<h3>
+
+Entrega Responsable
+
+</h3>
+
+
+<p>
+
+Cumplimos con tus pedidos
+de forma organizada y confiable.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="why-card">
+
+
+<i class="fa-solid fa-store"></i>
+
+
+<h3>
+
+Atención a Negocios
+
+</h3>
+
+
+<p>
+
+Abastecemos tiendas,
+comedores y pequeños comercios.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="why-card">
+
+
+<i class="fa-solid fa-handshake"></i>
+
+
+<h3>
+
+Clientes Satisfechos
+
+</h3>
+
+
+<p>
+
+Creamos relaciones basadas
+en confianza y compromiso.
+
+</p>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+    <!-- ==========================
+FOOTER
+========================== -->
+
+
+<footer>
+
+
+<div class="container">
+
+
+
+<div class="footer-grid">
+
+
+
+
+
+<!-- INFORMACIÓN -->
+
+<div class="footer-brand">
+
+
+<img 
+src="img/logo.jpeg"
+class="footer-logo"
+alt="Logo ZAVITA">
+
+
+
+<p>
+
+Huevos frescos y distribución
+con calidad, confianza y compromiso.
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- EMPRESA -->
+
 <div>
+
 
 <h3>
 
@@ -1072,11 +1194,15 @@ Empresa
 
 </h3>
 
-<a href="#">
+
+
+<a href="#inicio">
 
 Inicio
 
 </a>
+
+
 
 <a href="#nosotros">
 
@@ -1084,11 +1210,15 @@ Nosotros
 
 </a>
 
+
+
 <a href="#productos">
 
 Productos
 
 </a>
+
+
 
 <a href="#contacto">
 
@@ -1096,9 +1226,22 @@ Contacto
 
 </a>
 
+
+
 </div>
 
+
+
+
+
+
+
+
+
+<!-- SERVICIOS -->
+
 <div>
+
 
 <h3>
 
@@ -1106,33 +1249,56 @@ Servicios
 
 </h3>
 
-<a href="#">
+
+
+<a href="#productos">
 
 Venta al detalle
 
 </a>
 
-<a href="#">
+
+
+
+<a href="#productos">
 
 Venta al por mayor
 
 </a>
 
-<a href="#">
 
-Distribución
 
-</a>
 
-<a href="#">
+<a href="#contacto">
 
 Cotizaciones
 
 </a>
 
+
+
+<a href="#contacto">
+
+Distribución
+
+</a>
+
+
+
 </div>
 
+
+
+
+
+
+
+
+
+<!-- REDES -->
+
 <div>
+
 
 <h3>
 
@@ -1140,76 +1306,85 @@ Síguenos
 
 </h3>
 
+
+
+
 <div class="social">
 
-<a href="#">
+
+
+<a href="#" aria-label="Facebook">
 
 <i class="fab fa-facebook-f"></i>
 
 </a>
 
-<a href="#">
+
+
+
+
+<a href="#" aria-label="Instagram">
 
 <i class="fab fa-instagram"></i>
 
 </a>
 
-<a href="#">
+
+
+
+
+<a 
+href="https://wa.me/50360014234"
+target="_blank"
+aria-label="WhatsApp">
+
 
 <i class="fab fa-whatsapp"></i>
 
+
 </a>
 
-</div>
+
+
+
 
 </div>
 
+
+
 </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
 
 <div class="copyright">
 
-© 2025 ZAVITA.
+
+© 2026 ZAVITA.
 Todos los derechos reservados.
 
-</div>
+
 
 </div>
+
+
+
+
+</div>
+
 
 </footer>
 
-<!--==========================================
-BOTÓN WHATSAPP ZAVITA
-===========================================-->
-
-<a
-href="https://wa.me/50360014234?text=Hola%20ZAVITA%20%F0%9F%A5%9A,%20quiero%20información%20sobre%20sus%20huevos%20frescos,%20precios%20y%20entregas.%20Gracias."
-class="whatsapp"
-target="_blank">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-<!--==========================================
-BOTÓN SUBIR
-===========================================-->
-
-<button
-id="scrollTop">
-
-<i class="fa-solid fa-arrow-up"></i>
-
-</button>
-
     
-
-
-    
-<!--==========================================
-JS
-===========================================-->
-
-<script src="js/app.js"></script>
-
-</body>
-</html>
