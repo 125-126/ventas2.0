@@ -85,24 +85,29 @@ window.addEventListener("scroll",()=>{
 
 
 /* ==========================
-   MENU MOBILE
+   MENU MOBILE ZAVITA
 ========================== */
 
 
-if(menu){
+const menu = document.getElementById("menu");
+
+const nav = document.getElementById("nav");
+
+
+
+if(menu && nav){
 
 
 menu.addEventListener("click",()=>{
 
 
-    nav.classList.toggle("active");
+nav.classList.toggle("active");
 
 
-    menu.classList.toggle("open");
+menu.classList.toggle("open");
 
 
 });
-
 
 
 }
